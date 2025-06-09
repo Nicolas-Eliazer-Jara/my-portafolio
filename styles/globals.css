@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+
+:root {
+  --color-primario: 26 0 70; 
+  --color-secundario: 246 214 13; 
+  --color-terciario: 89 80 130; 
+  --color-cuarto: 248 198 98; 
+  --color-fondo: 15 26 47; 
+}
+
+.bg-primario {
+  background-color: rgb(var(--color-primario) / 1);
+}
+.bg-secundario {
+  background-color: rgb(var(--color-secundario) / 1);
+}
+.bg-terciario {
+  background-color: rgb(var(--color-terciario) / 1);
+}
+.bg-cuarto {
+  background-color: rgb(var(--color-cuarto) / 1);
+}
+
+/* Clases de texto */
+.text-primario {
+  color: rgb(var(--color-primario) / 1);
+}
+.text-secundario {
+  color: rgb(var(--color-secundario) / 1);
+}
+.text-terciario {
+  color: rgb(var(--color-terciario) / 1);
+}
+.text-cuarto {
+  color: rgb(var(--color-cuarto) / 1);
+}
+.text-fondo {
+  color: rgb(var(--color-fondo) / 1);
+}
+
+
+@font-face {
+  font-family:'BodoniModa';
+  src: url('../public/assets/BodoniModa.ttf');
+  font-style: normal;
+  font-weight:100 700 ;
+  font-display:  swap;
+}
+@theme{
+  /* font */
+  --font-sans: 'BodoniModa'
+}
+
+body {
+  cursor: url('/cursor.png') 0 0, auto;
+}
