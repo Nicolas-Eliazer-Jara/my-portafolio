@@ -1,8 +1,7 @@
-import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  output: 'export', // Necesario para Netlify
+// next.config.js
+const nextConfig = {
+  output: 'export',
 };
 
-export default nextConfig;
+module.exports = nextConfig;
