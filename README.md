@@ -23,7 +23,7 @@ Este es mi portafolio profesional como desarrollador frontend. Está diseñado p
 
 ## 📸 Vista previa
 
-![Vista previa](./public/preview.png)
+![Vista previa](./public/img/preview.png)
 
 ---
 
