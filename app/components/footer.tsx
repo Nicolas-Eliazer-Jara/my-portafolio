@@ -7,9 +7,9 @@ export default function Footer() {
   return (
     <>
       <section id="contact">
-        <div className=" pt-40  w-full  bg-[#010001]">
-          <div className=" w-[90%] mx-auto border-b-[1px] border-[#ffffff54]">
-            <h1 className="text-[17px] text-center pb-10">Nicolas Eliazer Jara</h1>
+        <div className=" pt-5 font-inter mt-10 w-[95%] mx-auto rounded-[10px]  mb-5 bg-[#030503] text-[#f1f0f1]">
+          <div className=" w-[90%] mx-auto border-b-[1px] border-[#db5c32]">
+            <h1 className="text-[17px] text-center pb-5">Nicolas Eliazer Jara</h1>
           </div>
           <div className="flex justify-center mt-5 ">
           {Contact.map(({ img,link, title }, i) => (

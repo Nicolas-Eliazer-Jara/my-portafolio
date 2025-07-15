@@ -14,7 +14,7 @@ export default function LoaderWrapper({ children }: { children: React.ReactNode 
   if (loading) {
     return (
       <div className="w-screen h-screen flex items-center justify-center bg-[#296acd]"> 
-         <Image src={gif} alt="Cargando..." className="w-100 h-50 object-cover" />
+         <Image src={gif} alt="Cargando..."  className="w-100 h-50 object-cover" ></Image>
       </div>
     );
   }

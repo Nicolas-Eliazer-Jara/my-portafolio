@@ -4,8 +4,8 @@ export default function About() {
   return (
     <>
       <section id="about">
-        <div className="">
-      <div className="flex mt-10  w-[90%] mx-auto  ">
+        <div className="w-[95%] mx-auto bg-[#f1f0f1]">
+      <div className="flex  w-[90%] mx-auto  ">
         <div className="w-[50%] h-[620px]  relative">
           <Image
             src="/img/2001.jpg"
@@ -15,9 +15,9 @@ export default function About() {
             priority
           />
         </div>
-        <div className=" bg-black  w-[50%] rounded-r-[15px]  flex justify-center pt-[25px] h-[620px]">
-          <h1 className="text-[#E0E9EE]  font-black font-sans w-[70%] text-[20px]">
-            Hola, soy [Tu Nombre], desarrollador frontend con enfoque en crear
+        <div className=" bg-secundario  w-[50%] rounded-r-[15px]  flex justify-center pt-[25px] h-[620px]">
+          <h1 className="text-[#E0E9EE]  w-[70%] text-[16px] my-auto">
+              Soy un desarrollador frontend con enfoque en crear
               interfaces modernas, accesibles y responsivas. Trabajo con
               tecnologías como React, TypeScript y TailwindCSS, y estoy en
               constante aprendizaje para mejorar mis habilidades y estar al día

@@ -1,7 +1,9 @@
 import '../styles/globals.css';
 import Nav from './components/nav';
 import Footer from './components/footer';
-import LoaderWrapper from './components/LoaderWrapper';
+import { interTight } from './fonts';
+
+
 import { ThemeProvider } from 'next-themes';
 
 export const metadata = {
@@ -14,16 +16,14 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="font-serif bg-gradient-to-t from-[#1D0D41] to-[#010001] ">
+    <html lang="en" className={`${interTight.variable}`}>
+    <body className=" text-[#030503]">
       <ThemeProvider enableSystem={true} defaultTheme="system">
-        <LoaderWrapper>
-          <Nav />
-          {children}
-          <Footer></Footer>
-        </LoaderWrapper>
-        </ThemeProvider>
-      </body>
-    </html>
+        <Nav />
+        {children}
+        <Footer />
+      </ThemeProvider>
+    </body>
+  </html>
   );
 }

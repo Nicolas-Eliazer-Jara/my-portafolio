@@ -2,11 +2,25 @@
 
 
 :root {
-  --color-primario: 26 0 70; 
-  --color-secundario: 246 214 13; 
-  --color-terciario: 89 80 130; 
+  --color-primario: 241 240 241; 
+  --color-secundario: 3 5 3; 
+  --color-terciario: 254 97 44; 
   --color-cuarto: 248 198 98; 
   --color-fondo: 15 26 47; 
+}
+
+@layer utilities {
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 2px;
+  }
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: #292e2986;
+
+  }
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #292e29;
+    border-radius: 10px;
+  }
 }
 
 .bg-primario {
@@ -40,18 +54,16 @@
 }
 
 
-@font-face {
-  font-family:'BodoniModa';
-  src: url('../public/assets/BodoniModa.ttf');
-  font-style: normal;
-  font-weight:100 700 ;
-  font-display:  swap;
-}
-@theme{
-  /* font */
-  --font-sans: 'BodoniModa'
-}
+
 
 body {
   cursor: url('/cursor.png') 0 0, auto;
+}
+
+body {
+  background-image: url('/img/fondo2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }

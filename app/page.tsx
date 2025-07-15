@@ -8,9 +8,8 @@ export default function Page() {
     <>
       <Home></Home>
       <About></About>
-      <Skills></Skills>
       <Works></Works>
-      
+      <Skills></Skills>
     </>
   );
 }

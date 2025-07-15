@@ -8,26 +8,26 @@ export default function Skills() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <div className="text-[#E0E9EE]  w-full py-10">
+    <div className=" w-[95%] mx-auto bg-primario text-primario pb-20  py-10 rounded-b-[10px]">
       <h1 className="text-[22px] text-center">tecnologías que manejo</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-[90%] mx-auto font-serif mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-[90%] mx-auto mt-10 ">
         {SkillsData.map(({ img, title, desc, descTwo }, i) => (
           <div
             key={i}
-            className={`bg-black rounded-xl m-1 border p-7 transition duration-200 cursor-pointer ${
+            className={` border-secundario  text-[#292e29]  m-1  border p-7 rounded-[5px] cursor-pointer hover:border-[#db5c32]  transition-colors duration-1000  ${
               selected === i
-                ? "bg-[linear-gradient(to_bottom,_#facc15,_#facc15,_#facc15,_#7c3aed)]  text-violet-900"
-                : "hover:bg-yellow-300 hover:text-violet-900 border-[#e0e9ee5b]"
+                ? "border-[#db5c32]"
+                : "hover:opacity-95  border-secundario"
             }`}
             onClick={() => setSelected(selected === i ? null : i)}
           >
             {selected === i ? (
               // ✅ Solo muestra descTwo si está seleccionado
-              <p className="whitespace-pre-line">{descTwo}</p>
+              <p className="whitespace-pre-line ">{descTwo}</p>
             ) : (
               <>
-                <div className="flex ml-3">
+                <div className="flex ">
                   <Image
                     src={img}
                     alt={title}
@@ -35,7 +35,7 @@ export default function Skills() {
                     height={40}
                     className="rounded-[4px]"
                   />
-                  <h1 className="text-[32px] pl-3">{title}</h1>
+                  <h1 className="text-[32px] hover:text-[#db5c32] pl-3">{title}</h1>
                 </div>
                 <p className="pt-3">{desc}</p>
               </>
