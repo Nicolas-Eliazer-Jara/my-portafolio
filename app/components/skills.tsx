@@ -1,48 +1,77 @@
 "use client";
 
 import { useState } from "react";
-import SkillsData from '../data/skillsData';
+import SkillsData from "../data/skillsData";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
+
 
 export default function Skills() {
   const [selected, setSelected] = useState<number | null>(null);
+  const {t} = useTranslation();
 
   return (
-    <div className=" w-[95%] mx-auto bg-primario text-primario pb-20  py-10 rounded-b-[10px]">
-      <h1 className="text-[22px] text-center">tecnologías que manejo</h1>
+    <section className="w-[95%] mx-auto bg-primario text-primario py-14 rounded-b-2xl">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-secundario">
+          {t("skillsTitle")}
+        </h2>
+        <p className="text-[15px] text-black/70 mt-2">
+        {t("skillsSubTitle")}
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-[90%] mx-auto mt-10 ">
-        {SkillsData.map(({ img, title, desc, descTwo }, i) => (
-          <div
+      {/* Grid */}
+      <div className="w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {SkillsData.map(({ img, title }, i) => (
+          <motion.div
             key={i}
-            className={` border-secundario  text-[#292e29]  m-1  border p-7 rounded-[5px] cursor-pointer hover:border-[#db5c32]  transition-colors duration-1000  ${
-              selected === i
-                ? "border-[#db5c32]"
-                : "hover:opacity-95  border-secundario"
-            }`}
+            layout
             onClick={() => setSelected(selected === i ? null : i)}
+            className={`cursor-pointer rounded-xl border bg-secundario text-[#f1f0f1] p-5 transition-all duration-500
+              ${
+                selected === i
+                  ? "border-[#db5c32] shadow-[0_12px_25px_0_rgba(255,165,0,0.5)]"
+                  : "hover:border-[#db5c32] hover:shadow-[0_6px_20px_0_rgba(255,165,0,0.35)] border-secundario"
+              }`}
           >
             {selected === i ? (
-              // ✅ Solo muestra descTwo si está seleccionado
-              <p className="whitespace-pre-line ">{descTwo}</p>
+              <AnimatePresence>
+                <motion.p
+                  key="descTwo"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="text-[15px] leading-relaxed"
+                >
+                  {t(`SkillsData.${title}.descTwo`)}
+                </motion.p>
+              </AnimatePresence>
             ) : (
-              <>
-                <div className="flex ">
+              <div className="flex items-center gap-4">
+                <div className="flex-shrink-0 w-[60px] h-[60px] flex justify-center items-center rounded-lg bg-primario/10">
                   <Image
                     src={img}
                     alt={title}
-                    width={40}
-                    height={40}
-                    className="rounded-[4px]"
+                    width={36}
+                    height={36}
+                    className="object-contain"
                   />
-                  <h1 className="text-[32px] hover:text-[#db5c32] pl-3">{title}</h1>
                 </div>
-                <p className="pt-3">{desc}</p>
-              </>
+                <div className="flex-1">
+                  <h3 className="text-[18px] font-semibold hover:text-[#db5c32] transition-colors">
+                    {title}
+                  </h3>
+                  <p className="pt-1 text-[14px] text-[#e4e3e4]/90">{t(`SkillsData.${title}.desc`)}</p>
+                </div>
+              </div>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
+

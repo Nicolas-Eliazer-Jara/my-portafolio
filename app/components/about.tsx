@@ -1,6 +1,10 @@
+'use client';
+
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const {t} = useTranslation();
   return (
     <>
       <section id="about">
@@ -8,24 +12,17 @@ export default function About() {
       <div className="flex  w-[90%] mx-auto  ">
         <div className="w-[50%] h-[620px]  relative">
           <Image
-            src="/img/2001.jpg"
+            src="/img/a.jpg"
             alt="fondo"
-            className="hover:opacity-100 rounded-l-[15px]  object-cover"
+            className=" rounded-l-[15px]  object-cover"
             fill
             priority
           />
         </div>
         <div className=" bg-secundario  w-[50%] rounded-r-[15px]  flex justify-center pt-[25px] h-[620px]">
-          <h1 className="text-[#E0E9EE]  w-[70%] text-[16px] my-auto">
-              Soy un desarrollador frontend con enfoque en crear
-              interfaces modernas, accesibles y responsivas. Trabajo con
-              tecnologías como React, TypeScript y TailwindCSS, y estoy en
-              constante aprendizaje para mejorar mis habilidades y estar al día
-              con las mejores prácticas del desarrollo web. Me apasiona
-              transformar ideas en experiencias visuales claras y funcionales.
-              He trabajado en proyectos personales que reflejan mi compromiso
-              con el código limpio, la organización y la usabilidad.
-            </h1>
+          <p className="text-[#E0E9EE]  w-[70%] text-[16px] my-auto">
+              {t("about")}
+            </p>
           </div>
         </div>
         </div>

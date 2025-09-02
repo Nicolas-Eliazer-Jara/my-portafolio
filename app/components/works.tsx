@@ -2,6 +2,7 @@
 import WorksData from "../data/works";
 import Image from "next/image";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Works() {
   return (
@@ -16,49 +17,49 @@ export default function Works() {
 }
 
 function WorkItem({
-  Nombre,
+  Id,
   Img,
   Img1,
   Img2,
   Img3,
-  ProyectoDescripcion,
   Tecnologias,
-  TecnologiaDescripcion,
-  Funcionalidades,
-  Rol,
   Enlace,
 }: any) {
   const [selectedImage, setSelectedImage] = useState<string>(Img); // estado propio por proyecto
+  const { t } = useTranslation();
+
+  // obtenemos las funcionalidades traducidas como array
+  const features = t(`WorksData.${Id}.Features`, { returnObjects: true }) as string[];
 
   return (
     <div className="w-[90%] flex mx-auto my-10 pt-15">
       <div className="w-[50%] px-10 max-h-[400px] overflow-y-auto scrollbar-custom ">
-        <p className="pb-10 font-black text-[23px] border-b border-gray-400 mb-5">
-          {Nombre}
-        </p>
+        <h1 className="pb-10 font-black text-[23px] border-b border-gray-400 mb-5">
+          {t(`WorksData.${Id}.Name`)}
+        </h1>
         <a
           href={Enlace}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block p-2 bg-[#fe612c] hover:bg-[#db5c32] text-secundario rounded-[10px] w-[150px] text-center"
         >
-          Ir a la App
+          <h1>{t("goToApp")}</h1>
         </a>
 
         <p className="pb-5 pt-5 mt-5 border-t border-gray-400">
-          {ProyectoDescripcion}
+          {t(`WorksData.${Id}.ProjectDescription`)}
         </p>
-        <p className="pb-5 font-black text-[18px]">Componentes:</p>
+        <h1 className="pb-5 font-black text-[18px]">{t("components")}:</h1>
         <p className="pb-12">{Tecnologias}</p>
-        <p className="pb-5 font-black text-[18px]">
-          Descripcion de tecnologias usadas:
-        </p>
-        <p className="pb-12">{TecnologiaDescripcion}</p>
-        <p className="pb-5 font-black text-[18px]">Tareas realizadas:</p>
-        <p className="pb-12">{Rol}</p>
-        <p className="pb-5 font-black text-[18px]">Funcionalidades:</p>
+        <h1 className="pb-5 font-black text-[18px]">
+        {t("descriptionTechnologies")}:
+        </h1>
+        <p className="pb-12">{t(`WorksData.${Id}.TechnologyDescription`)}</p>
+        <h1 className="pb-5 font-black text-[18px]">{t("tasksPerformed")}:</h1>
+        <p className="pb-12">{t(`WorksData.${Id}.Role`)}</p>
+        <h1 className="pb-5 font-black text-[18px]">{t("functionalities")}:</h1>
         <ul className="pb-12 list-disc pl-4">
-          {Funcionalidades.map((item: string, idx: number) => (
+          {features.map((item: string, idx: number) => (
             <li key={idx}>{item}</li>
           ))}
         </ul>
@@ -68,15 +69,15 @@ function WorkItem({
         <div className="h-[300px] mb-5">
           <Image
             src={selectedImage}
-            alt={Nombre}
+            alt={Id}
             height={900}
             width={900}
-            className="object-cover rounded-[10px] h-[300px] w-[430px] "
+            className="object-cover rounded-[10px] h-[300px] w-[430px]"
           />
         </div>
 
         <div className="flex gap-2">
-          {[Img1, Img2, Img3, Img].map((img, idx) => (
+          {[Img, Img1, Img2, Img3].map((img, idx) => (
             <div
               key={idx}
               onClick={() => setSelectedImage(img)}
@@ -84,7 +85,7 @@ function WorkItem({
             >
               <Image
                 src={img}
-                alt={`${Nombre}-${idx}`}
+                alt={`${Id}-${idx}`}
                 height={100}
                 width={100}
                 className="object-cover rounded-[10px] h-[80px] w-[100px]"
@@ -96,3 +97,4 @@ function WorkItem({
     </div>
   );
 }
+

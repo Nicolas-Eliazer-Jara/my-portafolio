@@ -1,0 +1,102 @@
+{
+  "home": "Home",
+  "aboutNav": "About",
+  "work": "Projects",
+  "contact": "Contact",
+
+  "title": "I'm a developer passionate about technology, always learning something new. I've been building websites for three years.",
+  "about": "I'm a front-end developer focused on creating modern, accessible, and responsive interfaces. I work with technologies like React, TypeScript, and TailwindCSS, and I'm constantly learning to improve my skills and stay up-to-date with web development best practices. I'm passionate about transforming ideas into clear, functional visual experiences. I've worked on personal projects that reflect my commitment to clean code, organization, and usability.",
+
+  "skillsTitle": "Technology Stack",
+  "skillsSubTitle": "Tools and languages ​​I use in my projects",
+
+
+  "footer": "All rights reserved",
+  "lenguage":"En",
+  "goToApp": "Go to the App",
+"components":"Components",
+"descriptionTechnologies":"Description of the technologies used",
+"tasksPerformed":"Tasks performed",
+"functionalities":"Functionalities",
+
+ "SkillsData": {
+    "HTML": {
+      "desc": "Web content structuring language",
+      "descTwo": "Web content structuring language"
+    },
+    "CSS": {
+      "desc": "Web content styling and visual design language",
+      "descTwo": "Visual styles, responsive design with Flexbox and Grid, animations, pseudo-classes, and media queries."
+    },
+    "JS": {
+      "desc": "Statically typed JavaScript for added security",
+      "descTwo": "DOM manipulation, functions, events, arrays, objects, asynchrony with fetch/async-await"
+    },
+    "REACT": {
+      "desc": "Library for building user interfaces.",
+      "descTwo": "Developing interfaces with components, using hooks (useState, useEffect), props, JSX."
+    },
+    "GIT": {
+      "desc": "Version control system for source code.",
+      "descTwo": "Local version control, using add, commit, push, branches, and merge."
+    },
+    "Next.js": {
+      "desc": "React framework with advanced features.",
+      "descTwo": "React framework with automatic routing, SSR/SSG, API routes, image optimization, using app/ and pages/."
+    },
+    "TAILWIND": {
+      "desc": "Utility class framework for rapid styling.",
+      "descTwo": "Styles with utility classes, mobile-first design."
+    },
+    "SQL": {
+      "desc": "Language for querying and managing databases.",
+      "descTwo": "Basic queries (SELECT, WHERE, JOIN, GROUP BY), table creation, inserting and updating data."
+    },
+    "TypeScript": {
+      "desc": "Statically typed JavaScript for added security.",
+      "descTwo": "Static typing, interfaces, custom types, development-time error prevention."
+    }
+  },
+
+  "WorksData":{
+
+"E-commerceStore":{
+"Name": "E-commerce Store",
+"ProjectDescription":
+"E-commerce web application developed with Next.js. Allows the user to browse products, filter by category, sort by price, view individual details, and manage them within a persistent cart.",
+"TechnologyDescription":
+"Next.js with App Router is used for dynamic page routing. Zustand manages the global cart state. TailwindCSS allows utility styles and custom classes with the theme system. Connects to the FakeStoreAPI public API to retrieve products.",
+"Role":
+"Full frontend design and development, including route structure, API consumption, filtering and sorting logic, responsive interface, and interaction animations.",
+"Features": [
+"Product listing with image, price, and rating",
+"Filter by category (men, women, jewelry, technology)",
+"Sorting by price ascending/descending",
+"Cart with counter, quantity increase/decrease, and deletion by item",
+"Product detail page with complete information",
+"Visual message upon checkout",
+"100% responsive design for desktop and mobile"
+]
+},
+
+"WeatherApp":{
+"Name":"WeatherApp",
+"ProjectDescription":
+"Weather web application developed with Next.js. Allows the user to search for a city and view the current weather, extended forecast, location map, and detailed weather data with custom animated icons.",
+"TechnologyDescription":
+"Next.js with App Router is used for routing and rendering. TailwindCSS for utilitarian and responsive styles. React Leaflet displays an interactive map with coordinates. OpenWeatherMap API provides current weather data and extended forecast. Meteocons offers animated and custom SVG icons. TypeScript ensures strong typing in all components.",
+"Role":
+"Full frontend development, API integration, local state management, dynamic weather data manipulation, animated icon integration, responsive design, and geographic visualization.",
+"Features": [
+"Weather search by city (supports compound names)",
+"Current weather display with custom animated icons",
+"Extended 5-day forecast (filtered by specific time)",
+"Detailed data: temperature, wind chill, humidity, pressure, clouds, visibility, and wind",
+"Centered location map with marker using Leaflet",
+"Modern styles with inner shadows and gradients using TailwindCSS",
+"100% responsive design adapted for mobile and desktop"
+]
+}
+
+  }
+}

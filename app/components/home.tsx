@@ -11,11 +11,11 @@ export default function Home() {
               </h1>
               <h1 className="text-[75px] font-semibold font-inter pt-1 text-[#db5c32]">.</h1>
               </div>
-              <h2 className="text-[15px] pt-1">
+              <p className="text-[15px] pt-1">
                 Soy un desarrollador apasionado por la
                 tecnología, siempre estoy aprendiendo algo nuevo. Hace tres años
                 que hago páginas web.
-              </h2>
+              </p>
             </div>
           </div>
         </div>

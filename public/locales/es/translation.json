@@ -1,0 +1,106 @@
+{
+  "home": "Inicio",
+  "aboutNav": "Sobre Mi",
+  "work": "Proyectos",
+  "contact": "Contacto",
+
+  "title": "Soy un desarrollador apasionado por la tecnología, siempre estoy aprendiendo algo nuevo. Hace tres años que hago páginas web.",
+  "about": "Soy un desarrollador frontend con enfoque en crear interfaces modernas, accesibles y responsivas. Trabajo con tecnologías como React, TypeScript y TailwindCSS, y estoy en constante aprendizaje para mejorar mis habilidades y estar al día con las mejores prácticas del desarrollo web. Me apasiona transformar ideas en experiencias visuales claras y funcionales. He trabajado en proyectos personales que reflejan mi compromiso con el código limpio, la organización y la usabilidad.",
+
+  "skillsTitle": "Stack Tecnológico",
+  "skillsSubTitle": "Herramientas y lenguajes que utilizo en mis proyectos",
+
+  "footer": "Todos los derechos reservados",
+  "lenguage":"Es",
+
+  "goToApp": "Ir a la App",
+  "components":"Componentes",
+  "descriptionTechnologies":"Descripción de tecnologías usadas",
+  "tasksPerformed":"Tareas realizadas",
+  "functionalities":"funcionalidades",
+
+  
+
+  "SkillsData": {
+    "HTML": {
+      "desc": "lenguaje para estructurar contenido web",
+      "descTwo": "lenguaje para estructurar contenido web"
+    },
+    "CSS": {
+      "desc": "lenguaje para dar estilo y diseño visual al contenido.",
+      "descTwo": "estilos visuales, diseño responsivo con Flexbox y Grid, animaciones, pseudo-clases y media queries."
+    },
+
+    "JS": {
+      "desc": "JavaScript con tipado estático para mayor seguridad.",
+      "descTwo": "manipulación del DOM, funciones, eventos, arrays, objetos, asincronía con fetch/async-await."
+    },
+    "REACT": {
+      "desc": "biblioteca para construir interfaces de usuario.",
+      "descTwo": "desarrollo de interfaces con componentes, uso de hooks (useState, useEffect), props, JSX."
+    },
+    "GIT": {
+      "desc": "sistema de control de versiones para código fuente.",
+      "descTwo": "control de versiones local, uso de add, commit, push, ramas y merge."
+    },
+    "Next.js": {
+      "desc": "framework para React con funcionalidades avanzadas.",
+      "descTwo": "framework de React con routing automático, SSR/SSG, API routes, optimización de imágenes, uso de app/ y pages/."
+    },
+    "TAILWIND": {
+      "desc": " framework de clases utilitarias para estilos rápidos.",
+      "descTwo": "estilos con clases utilitarias, diseño mobile-first"
+    },
+    "SQL": {
+      "desc": "lenguaje para consultar y manejar bases de datos.",
+      "descTwo": "consultas básicas (SELECT, WHERE, JOIN, GROUP BY), creación de tablas, inserción y actualización de datos."
+    },
+    "TypeScript": {
+      "desc": "JavaScript con tipado estático para mayor seguridad.",
+      "descTwo": "tipado estático, interfaces, tipos personalizados, prevención de errores en tiempo de desarrollo."
+    }
+  },
+
+
+  "WorksData":{
+
+    "E-commerceStore":{
+      "Name": "E-commerce Store",
+    "ProjectDescription":
+      "Aplicación web de e-commerce desarrollada con Next.js. Permite al usuario navegar productos, filtrarlos por categoría, ordenarlos por precio, ver detalles individuales y gestionarlos dentro de un carrito persistent.",
+      "TechnologyDescription":
+      "Next.js con App Router se utiliza para el ruteo de páginas dinámicas. Zustand gestiona el estado global del carrito. TailwindCSS permite estilos utilitarios y clases personalizadas con sistema de temas. Se conecta a la API pública FakeStoreAPI para obtener los productos.",
+    "Role":
+      "Diseño y desarrollo completo del frontend, incluyendo estructura de rutas, consumo de API, lógica de filtrado y ordenamiento, interfaz responsive, y animaciones de interacción.",
+   "Features": [
+      "Listado de productos con imagen, precio y puntuación",
+      "Filtro por categoría (men, women, joyería, tecnología)",
+      "Ordenamiento por precio ascendente/descendente",
+      "Carrito con contador, aumento/disminución de cantidad y borrado por ítem",
+      "Página de detalle del producto con información completa",
+      "Mensaje visual al completar una compra",
+      "Diseño 100% responsive para desktop y mobile"
+    ]
+    },
+    
+    "WeatherApp":{
+      "Name":"WeatherApp",
+      "ProjectDescription":
+      "Aplicación web del clima desarrollada con Next.js. Permite al usuario buscar una ciudad y visualizar el clima actual, pronóstico extendido, mapa de ubicación, y datos meteorológicos detallados con íconos animados personalizados.",
+      "TechnologyDescription":
+      "Se utiliza Next.js con App Router para el enrutamiento y rendering. TailwindCSS para estilos utilitarios y responsive. React Leaflet muestra un mapa interactivo con coordenadas. OpenWeatherMap API provee datos del clima actual y pronóstico extendido. Meteocons ofrece íconos SVG animados y personalizados. TypeScript asegura el tipado fuerte en todos los componentes.",
+    "Role":
+      "Desarrollo completo del frontend, conexión con APIs, gestión de estados locales, manipulación dinámica de datos del clima, integración de íconos animados, diseño responsive, y visualización geográfica.",
+    "Features": [
+      "Búsqueda de clima por ciudad (soporta nombres compuestos)",
+      "Visualización del clima actual con íconos animados personalizados",
+      "Pronóstico extendido de 5 días (filtrado por hora específica)",
+      "Datos detallados: temperatura, sensación térmica, humedad, presión, nubes, visibilidad y viento",
+      "Mapa de ubicación centrado con marcador usando Leaflet",
+      "Estilos modernos con sombras internas y gradientes usando TailwindCSS",
+      "Diseño 100% responsive adaptado para mobile y desktop"
+    ]
+    }
+
+  }
+}

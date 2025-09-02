@@ -1,7 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useTranslation} from "react-i18next"
 
 export default function Nav() {
+  const {i18n, t} = useTranslation();
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    i18n.changeLanguage(e.target.value);
+  };
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -28,11 +33,18 @@ export default function Nav() {
 
             <div className="absolute left-1/2 transform -translate-x-1/2 text-[16px]">
               <ul className="flex bg-white rounded-l-[10px] rounded-r-[10px]">
-                <a href="#home" className="px-6 bg-white rounded-l-[10px] hover:bg-[#030503] hover:text-white hover:rounded-[10px]">Home</a>
-                <a href="#about" className="px-6 bg-white hover:bg-[#030503] hover:text-white hover:rounded-[10px]">About</a>
-                <a href="#work" className="px-6 bg-white hover:bg-[#030503] hover:text-white hover:rounded-[10px]">Work</a>
-                <a href="#contact" className="px-6 bg-white rounded-r-[10px] hover:bg-[#030503] hover:text-white hover:rounded-[10px]">Contact</a>
+                <a href="#home" className="px-6 bg-white rounded-l-[10px] hover:bg-[#030503] hover:text-white hover:rounded-[10px]">{t("home")}</a>
+                <a href="#about" className="px-6 bg-white hover:bg-[#030503] hover:text-white hover:rounded-[10px]">{t("aboutNav")}</a>
+                <a href="#work" className="px-6 bg-white hover:bg-[#030503] hover:text-white hover:rounded-[10px]">{t("work")}</a>
+                <a href="#contact" className="px-6 bg-white rounded-r-[10px] hover:bg-[#030503] hover:text-white hover:rounded-[10px]">{t("contact")}</a>
               </ul>
+            </div>
+
+            <div className="absolute left-2/2 -translate-x-1/1 pr-7  text-[12px] text-[#292e29]">
+              <select onChange={handleChange} defaultValue={i18n.language}>
+                <option value="es">Español</option>
+                <option value="en">English</option>
+              </select>
             </div>
           </div>
         </div>
