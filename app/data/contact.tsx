@@ -10,11 +10,6 @@ const Contact = [
         link:'mailto:nicolas.jara.dev@gmail.com'
     },
     {
-        img:"/img/redes/x_dark.svg",
-        title:'X',
-        link:'https://x.com/Nicolas_jara21',
-    },
-    {
         img:"/img/redes/Instagram_dark.svg",
         title:'Instagram',
         link:'https://instagram.com/nicolas_psico',

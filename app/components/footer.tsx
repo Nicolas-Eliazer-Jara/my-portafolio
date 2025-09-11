@@ -8,6 +8,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
   const {t} = useTranslation()
 
+  const handleClick = () =>{
+    const boton = new Audio("/sound/button-2.wav");
+    boton.play();
+  }
   return (
     <>
       <section id="contact">
@@ -19,6 +23,7 @@ export default function Footer() {
           <div className="flex justify-center gap-8 mt-7">
           {Contact.map(({ img, link, title }, i) => (
             <a
+            onClick={handleClick}
               key={i}
               href={link}
               target="_blank"

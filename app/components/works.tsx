@@ -5,6 +5,9 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Works() {
+
+  
+
   return (
     <section id="work">
       <div className="w-[95%] mx-auto bg-primario text-secundario pt-10 mb-10 pb-10">
@@ -27,10 +30,15 @@ function WorkItem({
 }: any) {
   const [selectedImage, setSelectedImage] = useState<string>(Img); // estado propio por proyecto
   const { t } = useTranslation();
+  const features = (t(`WorksData.${Id}.Features`, { returnObjects: true }) || []) as string[];
+
 
   // obtenemos las funcionalidades traducidas como array
-  const features = t(`WorksData.${Id}.Features`, { returnObjects: true }) as string[];
 
+  const handleClick = () =>{
+    const boton = new Audio("/sound/button-2.wav");
+    boton.play();
+  }
   return (
     <div className="w-[90%] flex mx-auto my-10 pt-15">
       <div className="w-[50%] px-10 max-h-[400px] overflow-y-auto scrollbar-custom ">
@@ -38,6 +46,7 @@ function WorkItem({
           {t(`WorksData.${Id}.Name`)}
         </h1>
         <a
+          onClick={handleClick}
           href={Enlace}
           target="_blank"
           rel="noopener noreferrer"

@@ -6,7 +6,7 @@ const WorksData = [
     Img2: "/img/work/work-ecommerce/work-ecommerce2.png",
     Img3: "/img/work/work-ecommerce/work-ecommerce3.png",
     Tecnologias: "Next.js, TypeScript, TailwindCSS, Zustand, FakeStoreAPI",
-    Enlace: "https://tu-enlace-deploy.com",
+    Enlace: "https://e-commerce-one-phi-41.vercel.app/",
   },
   {
     Id: "WeatherApp",
@@ -17,7 +17,7 @@ const WorksData = [
     
     Tecnologias: "Next.js, TypeScript, TailwindCSS, React Leaflet, OpenWeatherMap API, Meteocons",
     
-    Enlace: "https://tu-enlace-deploy.com"
+    Enlace: "https://weather-l8kg.vercel.app/"
   }
   
 ];
