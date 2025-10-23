@@ -1,13 +1,29 @@
 "use client";
 import WorksData from "../data/works";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+interface WorkItemProps {
+  Id: string;
+  Img: string;
+  Img1: string;
+  Img2: string;
+  Img3: string;
+  Tecnologias: string;
+  Enlace: string;
+}
+
+
+
 export default function Works() {
+  const [mounted, setMounted] = useState(false);
 
-  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
+  if (!mounted) return null; // evita render en SSR
   return (
     <section id="work">
       <div className="w-[95%] mx-auto bg-primario text-secundario pt-10 mb-10 pb-10">
@@ -19,32 +35,28 @@ export default function Works() {
   );
 }
 
-function WorkItem({
-  Id,
-  Img,
-  Img1,
-  Img2,
-  Img3,
-  Tecnologias,
-  Enlace,
-}: any) {
-  const [selectedImage, setSelectedImage] = useState<string>(Img); // estado propio por proyecto
+
+
+function WorkItem({ Id, Img, Img1, Img2, Img3, Tecnologias, Enlace }: WorkItemProps) {
   const { t } = useTranslation();
-  const features = (t(`WorksData.${Id}.Features`, { returnObjects: true }) || []) as string[];
+  const [selectedImage, setSelectedImage] = useState(Img);
 
+  // Funcionalidades desde i18n
+  const featuresRaw = t(`WorksData.${Id}.Features`, { returnObjects: true });
+const features = Array.isArray(featuresRaw) ? featuresRaw : [];
 
-  // obtenemos las funcionalidades traducidas como array
-
-  const handleClick = () =>{
+  const handleClick = () => {
     const boton = new Audio("/sound/button-2.wav");
     boton.play();
-  }
+  };
+
   return (
     <div className="w-[90%] flex mx-auto my-10 pt-15">
-      <div className="w-[50%] px-10 max-h-[400px] overflow-y-auto scrollbar-custom ">
+      <div className="w-[50%] px-10 max-h-[400px] overflow-y-auto scrollbar-custom">
         <h1 className="pb-10 font-black text-[23px] border-b border-gray-400 mb-5">
           {t(`WorksData.${Id}.Name`)}
         </h1>
+
         <a
           onClick={handleClick}
           href={Enlace}
@@ -52,23 +64,25 @@ function WorkItem({
           rel="noopener noreferrer"
           className="inline-block p-2 bg-[#fe612c] hover:bg-[#db5c32] text-secundario rounded-[10px] w-[150px] text-center"
         >
-          <h1>{t("goToApp")}</h1>
+          {t("goToApp")}
         </a>
 
         <p className="pb-5 pt-5 mt-5 border-t border-gray-400">
           {t(`WorksData.${Id}.ProjectDescription`)}
         </p>
+
         <h1 className="pb-5 font-black text-[18px]">{t("components")}:</h1>
         <p className="pb-12">{Tecnologias}</p>
-        <h1 className="pb-5 font-black text-[18px]">
-        {t("descriptionTechnologies")}:
-        </h1>
+
+        <h1 className="pb-5 font-black text-[18px]">{t("descriptionTechnologies")}:</h1>
         <p className="pb-12">{t(`WorksData.${Id}.TechnologyDescription`)}</p>
+
         <h1 className="pb-5 font-black text-[18px]">{t("tasksPerformed")}:</h1>
         <p className="pb-12">{t(`WorksData.${Id}.Role`)}</p>
+
         <h1 className="pb-5 font-black text-[18px]">{t("functionalities")}:</h1>
         <ul className="pb-12 list-disc pl-4">
-          {features.map((item: string, idx: number) => (
+          {features.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}
         </ul>
@@ -106,4 +120,3 @@ function WorkItem({
     </div>
   );
 }
-

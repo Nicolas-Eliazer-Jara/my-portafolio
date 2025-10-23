@@ -18,7 +18,17 @@ const WorksData = [
     Tecnologias: "Next.js, TypeScript, TailwindCSS, React Leaflet, OpenWeatherMap API, Meteocons",
     
     Enlace: "https://weather-l8kg.vercel.app/"
+  },
+  {
+    Id: "ResultadosElectorales",
+    Img: "/img/work/work-election/work-election.png",
+    Img1: "/img/work/work-election/work-election1.png",
+    Img2: "/img/work/work-election/work-election2.png",
+    Img3: "/img/work/work-election/work-election3.png",
+    Tecnologias: "Next.js, TypeScript, TailwindCSS, Recharts, Datos-Locales",
+    Enlace: "https://resultados-electorales.vercel.app/"
   }
+  
   
 ];
 

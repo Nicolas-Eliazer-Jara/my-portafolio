@@ -1,16 +1,15 @@
-import Home from './components/home'
-import About from './components/about'
-import Skills from './components/skills'
-import Works from './components/works'
+import Home from './components/home';
+import About from './components/about';
+import Works from './components/works';
+import Skills from './components/skills';
 
 export default function Page() {
   return (
     <>
-      <Home></Home>
-      <About></About>
-      <Works></Works>
-      <Skills></Skills>
-
+      <Home />
+      <About />
+      <Works />
+      <Skills />
     </>
   );
 }

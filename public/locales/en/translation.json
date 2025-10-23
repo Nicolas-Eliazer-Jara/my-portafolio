@@ -95,6 +95,22 @@
 "Centered location map with marker using Leaflet",
 "Modern styles with inner shadows and gradients using TailwindCSS",
 "100% responsive design adapted for mobile and desktop"
+]},
+"ResultadosElectorales": {
+"Name": "Electoral Results",
+"ProjectDescription":
+"Interactive application that displays national election results. It allows you to view candidates, vote percentages, results by province, and dynamic charts with updates based on the election type (general or runoff).",
+"TechnologyDescription":
+"Next.js with TypeScript for a modular and efficient structure. TailwindCSS for a modern and responsive design. Recharts for dynamic visualizations of election data. Data is managed using custom hooks and strictly typed with TypeScript.",
+"Role":
+"Complete frontend design and development, including component structure, results visualization, interactive chart integration, typed data handling, and visual styling adapted to different devices.",
+"Features": [
+"Results visualization by candidate and political group",
+"Interactive pie chart of votes (positive, blank, invalid, contested)",
+"Dynamic type selector Election (general/runoff)",
+"Custom colors by political party",
+"Data rendered with strong typing in TypeScript",
+"Fully responsive design adapted to mobile and desktop screens"
 ]
 }
 

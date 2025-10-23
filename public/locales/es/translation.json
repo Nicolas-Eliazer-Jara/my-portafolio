@@ -100,7 +100,26 @@
       "Estilos modernos con sombras internas y gradientes usando TailwindCSS",
       "Diseño 100% responsive adaptado para mobile y desktop"
     ]
-    }
+    },
+
+    "ResultadosElectorales": {
+  "Name": "Resultados Electorales",
+  "ProjectDescription": 
+    "Aplicación interactiva que muestra los resultados de elecciones nacionales. Permite visualizar candidatos, porcentajes de votos, resultados por provincia y gráficos dinámicos con actualizaciones según el tipo de elección (generales o balotaje).",
+  "TechnologyDescription": 
+    "Next.js con TypeScript para una estructura modular y eficiente. TailwindCSS para un diseño moderno y responsive. Recharts para visualizaciones dinámicas de datos electorales. Los datos se gestionan mediante hooks personalizados y tipados estrictos con TypeScript.",
+  "Role": 
+    "Diseño y desarrollo completo del frontend, incluyendo estructura de componentes, visualización de resultados, integración de gráficos interactivos, manejo de datos tipados y estilo visual adaptado a distintos dispositivos.",
+  "Features": [
+    "Visualización de resultados por candidato y agrupación política",
+    "Gráfico circular interactivo de votos (positivos, blancos, nulos, impugnados)",
+    "Selector dinámico de tipo de elección (generales / balotaje)",
+    "Colores personalizados por partido político",
+    "Datos renderizados con tipado fuerte en TypeScript",
+    "Diseño totalmente responsive y adaptado a pantallas móviles y desktop"
+  ]
+}
+
 
   }
 }
