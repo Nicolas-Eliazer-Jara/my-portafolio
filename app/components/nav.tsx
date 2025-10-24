@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import i18n from "../i18n"; // 👈 importante
 
 export default function Nav() {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -18,14 +19,24 @@ export default function Nav() {
   if (!mounted) return null;
 
   const handleClick = () => new Audio("/sound/button-1.wav").play();
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => i18n.changeLanguage(e.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    i18n.changeLanguage(e.target.value);
+  };
 
   return (
     <nav className="relative z-50">
-      <div className={`bg-[#f1f0f1] fixed z-50 h-[50px] w-[94%] mx-9 transition-all duration-300 text-[#030503] pb-3 ${scrolled ? "top-0" : "top-12"}`}>
+      <div
+        className={`bg-[#f1f0f1] fixed z-50 h-[50px] w-[94%] mx-9 transition-all duration-300 text-[#030503] pb-3 ${
+          scrolled ? "top-0" : "top-12"
+        }`}
+      >
         <div className="relative h-full flex items-center pl-7 pr-8 mt-1">
           <div className="flex flex-col">
-            <a onClick={handleClick} className="hover:text-[#db5c32] font-semibold" href="#home">
+            <a
+              onClick={handleClick}
+              className="hover:text-[#db5c32] font-semibold"
+              href="#home"
+            >
               Nicolas Eliazer Jara
             </a>
             <p className="text-[#292e29] text-[12px]">La Pampa, Argentina</p>
@@ -34,7 +45,12 @@ export default function Nav() {
           <div className="absolute left-1/2 transform -translate-x-1/2 text-[16px]">
             <ul className="flex bg-white rounded-lg shadow-sm">
               {["home", "aboutNav", "work", "contact"].map((key) => (
-                <a key={key} onClick={handleClick} href={`#${key}`} className="px-6 py-1 hover:bg-[#030503] hover:text-white rounded-lg transition">
+                <a
+                  key={key}
+                  onClick={handleClick}
+                  href={`#${key}`}
+                  className="px-6 py-1 hover:bg-[#030503] hover:text-white rounded-lg transition"
+                >
                   {t(key)}
                 </a>
               ))}

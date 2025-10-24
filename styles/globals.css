@@ -56,9 +56,6 @@
 
 
 
-body {
-  cursor: url('/cursor.png') 0 0, auto;
-}
 
 body {
   background-image: url('/img/fondo2.jpg');

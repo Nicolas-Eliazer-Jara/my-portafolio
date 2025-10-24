@@ -1,6 +1,6 @@
 import Home from './components/home';
-import About from './components/about';
 import Works from './components/works';
+import About from './components/about';
 import Skills from './components/skills';
 
 export default function Page() {

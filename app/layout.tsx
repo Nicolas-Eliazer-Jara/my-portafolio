@@ -1,7 +1,8 @@
+
 import '../styles/globals.css';
 import Nav from './components/nav';
 import Footer from './components/footer';
-import "./i18n"; 
+import "./i18n";
 import { ThemeProvider } from 'next-themes';
 import { Merriweather_Sans, Inter } from "next/font/google";
 
