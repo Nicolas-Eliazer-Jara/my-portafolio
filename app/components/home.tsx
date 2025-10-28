@@ -8,12 +8,12 @@ export default function Home() {
           <div className="relative bg-[#f1f0f1]  rounded-t-[10px] text-[#030503] z-20 pl-[100px] pt-[330px] backdrop-brightness-65   w-full h-[100%]">
             <div className=" ">
               <div className="flex">
-              <h1 className="text-[75px] font-semibold font-inter pt-1">
+              <h1 className="lg:text-[75px] md:text-[55px] sm:text-[25px] font-semibold font-inter pt-1">
                 Frontend Developer
               </h1>
-              <h1 className="text-[75px] font-semibold font-inter pt-1 text-[#db5c32]">.</h1>
+              <h1 className="lg:text-[75px] md:text-[55px] sm:text-[25px] font-semibold font-inter pt-1 text-[#db5c32]">.</h1>
               </div>
-              <p className="text-[15px] pt-1">
+              <p className=" lg:text-[15px] md:text-[9px] sm:text-[10px] pt-1 ">
                 Soy un desarrollador apasionado por la
                 tecnología, siempre estoy aprendiendo algo nuevo. Hace tres años
                 que hago páginas web.

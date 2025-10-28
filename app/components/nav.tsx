@@ -26,7 +26,7 @@ export default function Nav() {
   return (
     <nav className="relative z-50">
       <div
-        className={`bg-[#f1f0f1] fixed z-50 h-[50px] w-[94%] mx-9 transition-all duration-300 text-[#030503] pb-3 ${
+        className={`bg-[#f1f0f1] fixed z-50 h-[50px] lg:w-[93%] md:w-[90%] mx-9 transition-all duration-300 text-[#030503] pb-3 ${
           scrolled ? "top-0" : "top-12"
         }`}
       >
@@ -34,15 +34,15 @@ export default function Nav() {
           <div className="flex flex-col">
             <a
               onClick={handleClick}
-              className="hover:text-[#db5c32] font-semibold"
+              className="hover:text-[#db5c32] font-semibold lg:text-[15px] md:text-[10px]"
               href="#home"
             >
               Nicolas Eliazer Jara
             </a>
-            <p className="text-[#292e29] text-[12px]">La Pampa, Argentina</p>
+            <p className="text-[#292e29] lg:text-[12px] md:text-[9px]">La Pampa, Argentina</p>
           </div>
 
-          <div className="absolute left-1/2 transform -translate-x-1/2 text-[16px]">
+          <div className="absolute left-1/2 transform -translate-x-1/2 lg:text-[16px] md:text-[9px] sm:text-[8px] ">
             <ul className="flex bg-white rounded-lg shadow-sm">
               {["home", "aboutNav", "work", "contact"].map((key) => (
                 <a
@@ -57,7 +57,7 @@ export default function Nav() {
             </ul>
           </div>
 
-          <div className="absolute right-6 text-[12px]">
+          <div className="absolute right-6 lg:text-[12px] md:text-[8px] sm:text-[8px]">
             <select
               className="bg-white text-[#030503] border border-gray-300 rounded-md px-3 py-1 shadow-sm hover:text-[#db5c32] focus:text-[#db5c32] focus:bg-white focus:outline-none transition"
               onChange={handleChange}

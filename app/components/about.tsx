@@ -15,7 +15,7 @@ export default function About() {
     <section id="aboutNav">
       <div className="w-[95%] mx-auto bg-[#f1f0f1]">
         <div className="flex w-[90%] mx-auto">
-          <div className="w-[50%] h-[620px] relative">
+          <div className="w-[50%] lg:h-[620px] sm:h-[420px] relative">
             <Image
               src="/img/a.jpg"
               alt="fondo"
@@ -24,8 +24,8 @@ export default function About() {
               priority
             />
           </div>
-          <div className="bg-secundario w-[50%] rounded-r-[15px] flex justify-center pt-[25px] h-[620px]">
-            <p className="text-[#E0E9EE] w-[70%] text-[16px] my-auto">
+          <div className="bg-secundario w-[50%] rounded-r-[15px] flex justify-center pt-[25px] lg:h-[620px] sm:h-[420px]">
+            <p className="text-[#E0E9EE] w-[70%] lg:text-[16px] md:text-[10px] sm:text-[8px] my-auto">
               {t("about")}
             </p>
           </div>
