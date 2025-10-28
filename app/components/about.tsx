@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
@@ -8,24 +8,27 @@ export default function About() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null; 
+  if (!mounted) return null;
 
   return (
     <section id="aboutNav">
       <div className="w-[95%] mx-auto bg-[#f1f0f1]">
-        <div className="flex w-[90%] mx-auto">
-          <div className="w-[50%] lg:h-[620px] sm:h-[420px] relative">
+        {/* flex-row en desktop, flex-col en móvil */}
+        <div className="flex flex-col sm:flex-row w-[90%] mx-auto">
+          {/* Imagen */}
+          <div className="relative sm:w-[50%] w-full sm:h-[520px] h-[250px]">
             <Image
               src="/img/a.jpg"
               alt="fondo"
-              className="rounded-l-[15px] object-cover"
+              className="object-cover rounded-t-[15px] sm:rounded-l-[15px] sm:rounded-tr-none"
               fill
               priority
             />
           </div>
-          <div className="bg-secundario w-[50%] rounded-r-[15px] flex justify-center pt-[25px] lg:h-[620px] sm:h-[420px]">
-            <p className="text-[#E0E9EE] w-[70%] lg:text-[16px] md:text-[10px] sm:text-[8px] my-auto">
+
+          {/* Texto */}
+          <div className="bg-secundario sm:w-[50%] w-full rounded-b-[15px] sm:rounded-r-[15px] sm:rounded-bl-none flex justify-center items-center p-6">
+            <p className="text-[#E0E9EE] w-[85%] lg:text-[16px] md:text-[12px] sm:text-[10px] text-[9px] text-center sm:text-left">
               {t("about")}
             </p>
           </div>
