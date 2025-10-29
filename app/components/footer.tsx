@@ -43,7 +43,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="flex lg:text-[13px] md:text-[10px] text-[7px] p-5 justify-center">
+        <div className="flex lg:text-[15px] md:text-[12px] text-[9px] p-5 justify-center">
           <p className="p-2">© {year} Nicolas Eliazer Jara. {t("footer")}</p>
           <p className="p-2">{t("lenguage")}</p>
         </div>

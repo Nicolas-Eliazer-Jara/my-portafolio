@@ -20,15 +20,15 @@ export default function About() {
             <Image
               src="/img/a.jpg"
               alt="fondo"
-              className="object-cover rounded-t-[15px] sm:rounded-l-[15px] sm:rounded-tr-none"
+              className="object-cover rounded-t-[10px] sm:rounded-l-[15px] sm:rounded-tr-none"
               fill
               priority
             />
           </div>
 
           {/* Texto */}
-          <div className="bg-secundario sm:w-[50%] w-full rounded-b-[15px] sm:rounded-r-[15px] sm:rounded-bl-none flex justify-center items-center p-6">
-            <p className="text-[#E0E9EE] w-[85%] lg:text-[16px] md:text-[12px] sm:text-[10px] text-[9px] text-center sm:text-left">
+          <div className="bg-secundario sm:w-[50%] w-full rounded-b-[10px] sm:rounded-r-[15px] sm:rounded-bl-none flex justify-center items-center p-6">
+            <p className="text-[#E0E9EE] w-[85%] lg:text-[15px] md:text-[12px] text-[9px]  text-center sm:text-left">
               {t("about")}
             </p>
           </div>

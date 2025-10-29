@@ -21,7 +21,7 @@ export default function Skills() {
     <section className="w-[95%] mx-auto bg-primario text-primario py-14 rounded-b-2xl">
       {/* Header */}
       <div className="text-center mb-12">
-        <h2 className="lg:text-[30px] md:text-[20px] text-[17px] font-bold text-secundario">{t("skillsTitle")}</h2>
+        <h2 className="lg:text-[25px] md:text-[22px] text-[14px] font-bold text-secundario">{t("skillsTitle")}</h2>
         <p className="lg:text-[15px] md:text-[12px] text-[9px] text-black/70 mt-2">{t("skillsSubTitle")}</p>
       </div>
 
@@ -45,7 +45,7 @@ export default function Skills() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="lg:text-[14px] md:text-[11px] text-[8px] leading-relaxed"
+                  className="lg:text-[15px] md:text-[12px] text-[9px] leading-relaxed"
                 >
                   {t(`SkillsData.${title}.descTwo`)}
                 </motion.p>
@@ -56,8 +56,8 @@ export default function Skills() {
                   <Image src={img} alt={title} width={36} height={36} className="object-contain" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="lg:text-[17px] md:text-[15px] text-[12px] font-semibold hover:text-[#db5c32] transition-colors">{title}</h3>
-                  <p className="pt-1 lg:text-[14px] md:text-[11px] text-[8px] text-[#e4e3e4]/90">{t(`SkillsData.${title}.desc`)}</p>
+                  <h3 className="lg:text-[16px] md:text-[13px] text-[10px] font-semibold hover:text-[#db5c32] transition-colors">{title}</h3>
+                  <p className="pt-1 lg:text-[15px] md:text-[12px] text-[9px] text-[#e4e3e4]/90">{t(`SkillsData.${title}.desc`)}</p>
                 </div>
               </div>
             )}

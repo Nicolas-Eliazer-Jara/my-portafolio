@@ -27,11 +27,12 @@ export default function Nav() {
   return (
     <nav className="relative z-50">
       <div
-        className={`bg-[#f1f0f1] fixed z-50 h-[50px] lg:w-[93%] md:w-[92%] mx-9 transition-all duration-300 text-[#030503] pb-3 ${
+        className={`bg-[#f1f0f1] fixed z-50 h-[50px] lg:w-[93%] md:w-[92%] w-[92%] mx-4 md:mx-9 transition-all duration-300 text-[#030503] pb-3 ${
           scrolled ? "top-0" : "top-12"
         }`}
       >
-        <div className="flex justify-between items-center h-full px-5">
+        {/* CONTENEDOR PRINCIPAL */}
+        <div className="flex items-center justify-between h-full px-5">
           {/* LOGO */}
           <div className="flex flex-col">
             <a
@@ -49,12 +50,12 @@ export default function Nav() {
           {/* BOTÓN HAMBURGUESA (solo móvil) */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-[#030503] focus:outline-none ml-auto"
+            className="md:hidden text-[#030503] focus:outline-none"
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
 
-          {/* MENÚ PRINCIPAL */}
+          {/* MENÚ PRINCIPAL (desktop) */}
           <div className="hidden md:flex space-x-6 bg-white rounded-lg shadow-sm lg:text-[14px] md:text-[12px] ">
             {["home", "aboutNav", "work", "contact"].map((key) => (
               <a

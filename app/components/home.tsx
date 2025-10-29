@@ -4,16 +4,16 @@ export default function Home() {
   return (
     <>
       <section id="home">
-        <div className=" font-inter relative w-[95%] mx-auto mt-9  h-[620px] z-10 overflow-hidden  ">
-          <div className="relative bg-[#f1f0f1]  rounded-t-[10px] text-[#030503] z-20 pl-[100px] pt-[330px] backdrop-brightness-65   w-full h-[100%]">
+        <div className=" font-inter relative w-[95%] mx-auto mt-9  md:h-[620px] h-[420px] z-10 overflow-hidden  ">
+          <div className="relative bg-[#f1f0f1]  rounded-t-[10px] text-[#030503] z-20 md:pl-[100px] pl-[20px] md:pt-[330px] pt-[230px] backdrop-brightness-65   w-full h-[100%]">
             <div className=" ">
               <div className="flex">
-              <h1 className="lg:text-[75px] md:text-[55px] sm:text-[25px] font-semibold font-inter pt-1">
+              <h1 className="lg:text-[75px] md:text-[55px] text-[25px] font-semibold font-inter pt-1">
                 Frontend Developer
               </h1>
-              <h1 className="lg:text-[75px] md:text-[55px] sm:text-[25px] font-semibold font-inter pt-1 text-[#db5c32]">.</h1>
+              <h1 className="lg:text-[75px] md:text-[55px] text-[25px] font-semibold font-inter pt-1 text-[#db5c32]">.</h1>
               </div>
-              <p className=" lg:text-[15px] md:text-[9px] sm:text-[10px] pt-1 ">
+              <p className=" lg:text-[15px] md:text-[12px] text-[9px] pt-1 md:pr-20 pr-3">
                 Soy un desarrollador apasionado por la
                 tecnología, siempre estoy aprendiendo algo nuevo. Hace tres años
                 que hago páginas web.

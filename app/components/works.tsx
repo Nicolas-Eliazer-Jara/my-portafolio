@@ -18,6 +18,7 @@ interface WorkItemProps {
 
 export default function Works() {
   const [mounted, setMounted] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setMounted(true);
@@ -27,6 +28,10 @@ export default function Works() {
   return (
     <section id="work">
       <div className="w-[95%] mx-auto bg-primario text-secundario pt-10 mb-10 pb-10">
+      <div className="text-center mb-12">
+        <h2 className="lg:text-[25px] md:text-[22px] text-[14px] font-bold text-secundario">{t("projectsTitle")}</h2>
+        <p className="lg:text-[15px] md:text-[12px] text-[9px] text-black/70 mt-2">{t("projectsSubTitle")}</p>
+      </div>
         {WorksData.map((work, i) => (
           <WorkItem key={i} {...work} />
         ))}
@@ -53,10 +58,6 @@ const features = Array.isArray(featuresRaw) ? featuresRaw : [];
   return (
     <div className="w-[90%] sm:flex  mx-auto my-10 pt-15">
 
-<div className="text-center mb-12">
-        <h2 className="lg:text-[30px] md:text-[20px] text-[17px] font-bold text-secundario">{t("projectsTitle")}</h2>
-        <p className="lg:text-[15px] md:text-[12px] text-[9px] text-black/70 mt-2">{t("projectsSubTitle")}</p>
-      </div>
       <div className="sm:w-[50%] px-10 max-h-[400px] overflow-y-auto scrollbar-custom">
         <h1 className="pb-10 font-black lg:text-[23px] md:text-[18px] text-[14px] border-b border-gray-400 mb-5">
           {t(`WorksData.${Id}.Name`)}
@@ -67,26 +68,26 @@ const features = Array.isArray(featuresRaw) ? featuresRaw : [];
           href={Enlace}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block p-2 bg-[#fe612c] hover:bg-[#db5c32] text-secundario rounded-[10px] lg:w-[150px] md:w-[110px] lg:text-[14px] md:text-[13px] text-center"
+          className="inline-block p-2 bg-[#fe612c] hover:bg-[#db5c32] text-secundario rounded-[10px] lg:w-[150px] md:w-[110px] w-[70px] lg:text-[15px] md:text-[12px] text-[9px] text-center"
         >
           {t("goToApp")}
         </a>
 
-        <p className="pb-5 pt-5 mt-5 border-t border-gray-400 lg:text-[14px] md:text-[13px]">
+        <p className="pb-5 pt-5 mt-5 border-t border-gray-400 lg:text-[15px] md:text-[12px] text-[9px]">
           {t(`WorksData.${Id}.ProjectDescription`)}
         </p>
 
-        <h1 className="pb-5 font-black lg:text-[18px] md:text-[15px]">{t("components")}:</h1>
-        <p className="pb-12 lg:text-[14px] md:text-[13px]">{Tecnologias}</p>
+        <h1 className="pb-5 font-black lg:text-[23px] md:text-[18px] text-[14px]">{t("components")}:</h1>
+        <p className="pb-12 lg:text-[15px] md:text-[12px] text-[9px]">{Tecnologias}</p>
 
-        <h1 className="pb-5 font-black lg:text-[18px] md:text-[15px]">{t("descriptionTechnologies")}:</h1>
-        <p className="pb-12 lg:text-[14px] md:text-[13px]">{t(`WorksData.${Id}.TechnologyDescription`)}</p>
+        <h1 className="pb-5 font-black lg:text-[23px] md:text-[18px] text-[14px]">{t("descriptionTechnologies")}:</h1>
+        <p className="pb-12 lg:text-[15px] md:text-[12px] text-[9px]">{t(`WorksData.${Id}.TechnologyDescription`)}</p>
 
-        <h1 className="pb-5 font-black lg:text-[18px] md:text-[15px]">{t("tasksPerformed")}:</h1>
-        <p className="pb-12 lg:text-[14px] md:text-[13px]">{t(`WorksData.${Id}.Role`)}</p>
+        <h1 className="pb-5 font-black lg:text-[23px] md:text-[18px] text-[14px]">{t("tasksPerformed")}:</h1>
+        <p className="pb-12 lg:text-[15px] md:text-[12px] text-[9px]">{t(`WorksData.${Id}.Role`)}</p>
 
-        <h1 className="pb-5 font-black lg:text-[18px] md:text-[15px]">{t("functionalities")}:</h1>
-        <ul className="pb-12 lg:text-[14px] md:text-[13px] list-disc pl-4">
+        <h1 className="pb-5 font-black lg:text-[23px] md:text-[18px] text-[14px]">{t("functionalities")}:</h1>
+        <ul className="pb-12 lg:text-[15px] md:text-[12px] text-[9px] list-disc pl-4">
           {features.map((item, idx) => (
             <li key={idx}>{item}</li>
           ))}
