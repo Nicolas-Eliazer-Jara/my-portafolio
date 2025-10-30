@@ -38,11 +38,11 @@ export default function Nav() {
             <a
               onClick={handleClick}
               href="#home"
-              className="hover:text-[#db5c32] font-semibold lg:text-[14px] md:text-[12px] text-[10px]"
+              className="hover:text-[#db5c32] transition-colors duration-300 font-semibold lg:text-[14px] md:text-[12px] text-[10px]"
             >
               Nicolas Eliazer Jara
             </a>
-            <p className="text-[#292e29] lg:text-[11px] md:text-[9px] text-[7px]">
+            <p className="text-[#292e29] lg:text-[11px] md:text-[9px] text-[7px] ">
               La Pampa, Argentina
             </p>
           </div>
@@ -50,19 +50,19 @@ export default function Nav() {
           {/* BOTÓN HAMBURGUESA (solo móvil) */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-[#030503] focus:outline-none"
+            className="md:hidden text-[#030503] hover:text-[#db5c32] focus:outline-none"
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
 
           {/* MENÚ PRINCIPAL (desktop) */}
-          <div className="hidden md:flex space-x-6 bg-white rounded-lg shadow-sm lg:text-[14px] md:text-[12px] ">
+          <div className="hidden md:flex  bg-white rounded-lg shadow-sm lg:text-[14px] md:text-[12px] ">
             {["home", "aboutNav", "work", "contact"].map((key) => (
               <a
                 key={key}
                 onClick={handleClick}
                 href={`#${key}`}
-                className="px-4 py-1 hover:bg-[#030503] hover:text-white rounded-lg transition"
+                className="px-8 py-1  duration-100 hover:bg-[#030503] hover:text-white rounded-lg transition"
               >
                 {t(key)}
               </a>
@@ -85,7 +85,7 @@ export default function Nav() {
 
         {/* MENÚ DESPLEGABLE (versión móvil) */}
         {menuOpen && (
-          <div className="md:hidden absolute right-0 top-full bg-white rounded-b-lg shadow-lg mt-1 w-[150px] text-center text-[9px]">
+          <div className="md:hidden absolute right-0 top-full bg-white rounded-b-lg shadow-lg  w-[150px] text-center text-[9px]">
             {["home", "aboutNav", "work", "contact"].map((key) => (
               <a
                 key={key}
@@ -94,7 +94,7 @@ export default function Nav() {
                   setMenuOpen(false);
                 }}
                 href={`#${key}`}
-                className="block px-4 py-2 hover:bg-[#030503] hover:text-white transition"
+                className="block px-4 py-2 hover:bg-[#030503] hover:text-white transition duration-100"
               >
                 {t(key)}
               </a>
