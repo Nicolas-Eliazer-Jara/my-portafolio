@@ -12,20 +12,19 @@ export default function About() {
 
   return (
     <section id="aboutNav">
-      <div className="w-[95%] mx-auto bg-[#f1f0f1]">
+      <div className="w-[95%] mx-auto bg-[#f1f0f1] ">
         {/* flex-row en desktop, flex-col en móvil */}
-        <div className="flex flex-col sm:flex-row w-[90%] mx-auto">
+        <div className="flex flex-col sm:flex-row w-[90%] mx-auto ">
           {/* Imagen */}
-          <div className="relative sm:w-[50%] w-full sm:h-[520px] h-[250px] overflow-hidden rounded-t-[10px] sm:rounded-l-[15px] sm:rounded-tr-none">
-  <Image
-    src="/img/a.jpg"
-    alt="fondo"
-    fill
-    priority
-    className="object-cover transition-transform duration-700 hover:scale-110"
-  />
-</div>
-
+          <div className="relative sm:w-[50%] w-full sm:h-[520px] h-[250px] overflow-hidden rounded-t-[10px] sm:rounded-l-[15px] sm:rounded-tr-none ">
+            <Image
+              src="/img/a.jpg"
+              alt="fondo"
+              fill
+              priority
+              className="object-cover transition-transform duration-700 hover:scale-110"
+            />
+          </div>
 
           {/* Texto */}
           <div className="bg-secundario sm:w-[50%] w-full rounded-b-[10px] sm:rounded-r-[15px] sm:rounded-bl-none flex justify-center items-center p-6">

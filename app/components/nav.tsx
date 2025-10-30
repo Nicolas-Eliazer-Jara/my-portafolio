@@ -27,7 +27,7 @@ export default function Nav() {
   return (
     <nav className="relative z-50">
       <div
-        className={`bg-[#f1f0f1] fixed z-50 h-[50px] lg:w-[93%] md:w-[92%] w-[92%] mx-4 md:mx-9 transition-all duration-300 text-[#030503] pb-3 ${
+        className={`bg-[#f1f0f1] fixed z-50 h-[50px] lg:w-[94%] md:w-[92%] w-[92%] mx-4 md:mx-9 transition-all duration-300 text-[#030503] pb-3 ${
           scrolled ? "top-0" : "top-12"
         }`}
       >

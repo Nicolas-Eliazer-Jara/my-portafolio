@@ -1,38 +1,38 @@
 const skillsData = [
   {
-    img: "/img/skils/x/html5.svg",
+    img: "/img/skils/logos/HTML.svg",
     title: "HTML",
   },
   {
-    img: "/img/skils/x/css_old.svg",
+    img: "/img/skils/logos/CSS.svg",
     title: "CSS",
   },
   {
-    img: "/img/skils/x/javascript.svg",
+    img: "/img/skils/logos/JS.svg",
     title: "JS",
   },
   {
-    img: "/img/skils/x/react_light.svg",
+    img: "/img/skils/logos/REACT.svg",
     title: "REACT",
   },
   {
-    img: "/img/skils/x/git.svg",
+    img: "/img/skils/logos/GIT.svg",
     title: "GIT",
   },
   {
-    img: "/img/skils/x/nextjs_icon_dark.svg",
+    img: "/img/skils/logos/NEXT.svg",
     title: "Next.js",
   },
   {
-    img: "/img/skils/x/tailwindcss.svg",
+    img: "/img/skils/logos/TW.svg",
     title: "TAILWIND",
   },
   {
-    img: "/img/skils/x/icons8-sql-48.png",
+    img: "/img/skils/logos/SQL.svg",
     title: "SQL",
   },
   {
-    img: "/img/skils/x/typescript.svg",
+    img: "/img/skils/logos/TS.svg",
     title: "TypeScript",
   },
 ];
