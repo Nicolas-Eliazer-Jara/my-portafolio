@@ -1,21 +1,21 @@
 const Contact = [
     {
-        img:"/img/redes/linkedin.png",
+        img:"/img/redes/LINKEDIN.svg",
         title:'LinKedin',
         link:'https://www.linkedin.com/in/nicolas-eliazer-jara-57453236a/',
     },
     {
-        img:"/img/redes/gmail.png",
+        img:"/img/redes/GMAIL.svg",
         title:'Gmail',
         link:'mailto:nicolas.jara.dev@gmail.com'
     },
     {
-        img:"/img/redes/Instagram_dark.svg",
+        img:"/img/redes/INSTAGRAM.svg",
         title:'Instagram',
         link:'https://instagram.com/nicolas_psico',
     },
     {
-        img:"/img/redes/GitHub_dark.svg",
+        img:"/img/redes/GITHUB.svg",
         title:'GitHub',
         link:'https://github.com/Nicolas-Eliazer-Jara',
     }

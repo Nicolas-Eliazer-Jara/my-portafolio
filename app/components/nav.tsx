@@ -1,28 +1,47 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Menu, X } from "lucide-react"; // 👈 iconos de menú
+import { Menu, X } from "lucide-react";
 import i18n from "../i18n";
+import Image from "next/image";
+import ES from "@/public/img/options/LENGUAGEDARK.svg";
 
 export default function Nav() {
   const { t } = useTranslation();
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openLang, setOpenLang] = useState(false);
+  const [selectedLang, setSelectedLang] = useState(i18n.language);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 10);
+    const onClickOutside = (e: MouseEvent) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node))
+        setOpenLang(false);
+    };
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    document.addEventListener("click", onClickOutside);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("click", onClickOutside);
+    };
   }, []);
 
   if (!mounted) return null;
 
   const handleClick = () => new Audio("/sound/button-1.wav").play();
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) =>
-    i18n.changeLanguage(e.target.value);
+  const handleChange = (value: string) => i18n.changeLanguage(value);
+
+  const languages = [
+    { value: "es", label: "Español" },
+    { value: "en", label: "English" },
+  ];
+
+  const current = languages.find((l) => l.value === selectedLang)!;
 
   return (
     <nav className="relative z-50">
@@ -31,7 +50,6 @@ export default function Nav() {
           scrolled ? "top-0" : "top-12"
         }`}
       >
-        {/* CONTENEDOR PRINCIPAL */}
         <div className="flex items-center justify-between h-full px-5">
           {/* LOGO */}
           <div className="flex flex-col">
@@ -42,12 +60,12 @@ export default function Nav() {
             >
               Nicolas Eliazer Jara
             </a>
-            <p className="text-[#292e29] lg:text-[11px] md:text-[9px] text-[7px] ">
+            <p className="text-[#292e29] lg:text-[11px] md:text-[9px] text-[7px]">
               La Pampa, Argentina
             </p>
           </div>
 
-          {/* BOTÓN HAMBURGUESA (solo móvil) */}
+          {/* BOTÓN HAMBURGUESA (móvil) */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-[#030503] hover:text-[#db5c32] focus:outline-none"
@@ -56,36 +74,76 @@ export default function Nav() {
           </button>
 
           {/* MENÚ PRINCIPAL (desktop) */}
-          <div className="hidden md:flex  bg-white rounded-lg shadow-sm lg:text-[14px] md:text-[12px] ">
+          <div className="hidden md:flex bg-white rounded-lg shadow-sm lg:text-[14px] md:text-[12px]">
             {["home", "aboutNav", "work", "contact"].map((key) => (
               <a
                 key={key}
                 onClick={handleClick}
                 href={`#${key}`}
-                className="px-8 py-1  duration-100 hover:bg-[#030503] hover:text-white rounded-lg transition"
+                className="px-8 py-1 duration-100 hover:bg-[#030503] hover:text-white rounded-lg transition"
               >
                 {t(key)}
               </a>
             ))}
           </div>
 
-          {/* SELECTOR DE IDIOMA (desktop) */}
-          <div className="hidden md:block lg:text-[12px] md:text-[10px]">
-            <select
-              className="bg-white text-[#030503] border border-gray-300 rounded-md px-2 py-1 shadow-sm hover:text-[#db5c32] focus:outline-none"
-              onChange={handleChange}
-              onClick={handleClick}
-              defaultValue={i18n.language}
+          {/* SELECTOR DE IDIOMA (desktop personalizado con una sola imagen) */}
+          <div
+            ref={wrapperRef}
+            className="hidden md:block relative lg:text-[12px] md:text-[10px] w-[130px]"
+          >
+            <button
+              type="button"
+              onClick={() => setOpenLang(!openLang)}
+              className="flex items-center w-full bg-white text-[#030503] border border-gray-300 rounded-md px-2 py-1 shadow-sm focus:outline-none hover:text-[#db5c32] transition"
             >
-              <option value="es">Español</option>
-              <option value="en">English</option>
-            </select>
+              <Image
+                src={ES}
+                width={30}
+                height={20}
+                alt="Idioma"
+                className="w-[30px] h-[23px] mr-2"
+              />
+              <span className="flex-1 text-left">{current.label}</span>
+              <svg
+                className={`w-4 h-4 ml-1 transform transition-transform ${
+                  openLang ? "rotate-180" : ""
+                }`}
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z" />
+              </svg>
+            </button>
+
+            {openLang && (
+              <ul className="absolute left-0 top-full mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50 overflow-hidden">
+                {languages.map((lang) => (
+                  <li
+                    key={lang.value}
+                    onClick={() => {
+                      setSelectedLang(lang.value);
+                      handleChange(lang.value);
+                      handleClick();
+                      setOpenLang(false);
+                    }}
+                    className={`px-3 py-2 cursor-pointer transition-colors duration-150 ${
+                      selectedLang === lang.value
+                        ? "bg-[#030503] text-[#db5c32]"
+                        : "hover:bg-[#030503]/80 hover:text-white"
+                    }`}
+                  >
+                    {lang.label}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
 
-        {/* MENÚ DESPLEGABLE (versión móvil) */}
+        {/* MENÚ MÓVIL */}
         {menuOpen && (
-          <div className="md:hidden absolute right-0 top-full bg-white rounded-b-lg shadow-lg  w-[150px] text-center text-[9px]">
+          <div className="md:hidden absolute right-0 top-full bg-white rounded-b-lg shadow-lg w-[150px] text-center text-[9px]">
             {["home", "aboutNav", "work", "contact"].map((key) => (
               <a
                 key={key}
@@ -102,7 +160,7 @@ export default function Nav() {
 
             <select
               className="mt-2 mb-2 bg-white text-[#030503] border border-gray-300 rounded-md px-2 py-1 shadow-sm"
-              onChange={handleChange}
+              onChange={(e) => handleChange(e.target.value)}
               defaultValue={i18n.language}
             >
               <option value="es">Español</option>
