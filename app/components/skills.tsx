@@ -18,7 +18,7 @@ export default function Skills() {
   if (!mounted || !ready) return null;
 
   return (
-    <section className="w-[95%] mx-auto bg-primario text-primario py-14 rounded-b-2xl">
+    <section id="tecnologies" className="w-[95%] mx-auto bg-primario text-primario py-14 rounded-lg">
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="lg:text-[25px] md:text-[22px] text-[14px] font-bold text-secundario">
@@ -57,7 +57,6 @@ export default function Skills() {
             ) : (
               <div className="flex items-center gap-4">
                 <div className="shrink-0 lg:w-[43px] lg:h-[43px] md:w-[33px] md:h-[33px] w-[23px] h-[23px] flex justify-center items-center rounded-lg bg-primario/10 transition-transform duration-200 hover:scale-110">
-                  {/* 🔧 Corregido: faltaban las unidades en w/h */}
                   <Image
                     src={img}
                     alt={title}

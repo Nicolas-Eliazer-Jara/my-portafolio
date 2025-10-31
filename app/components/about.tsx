@@ -12,7 +12,7 @@ export default function About() {
 
   return (
     <section id="aboutNav">
-      <div className="w-[95%] mx-auto bg-[#f1f0f1] ">
+      <div className="w-[95%] mx-auto bg-[#f1f0f1] pt-14 pb-10 rounded-b-lg ">
         {/* flex-row en desktop, flex-col en móvil */}
         <div className="flex flex-col sm:flex-row w-[90%] mx-auto ">
           {/* Imagen */}

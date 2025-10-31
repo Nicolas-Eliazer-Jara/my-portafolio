@@ -44,9 +44,9 @@ export default function Nav() {
   const current = languages.find((l) => l.value === selectedLang)!;
 
   return (
-    <nav className="relative z-50">
+    <nav className="relative mx-auto w-[95%] z-50">
       <div
-        className={`bg-[#f1f0f1] fixed z-50 h-[50px] lg:w-[94%] md:w-[92%] w-[92%] mx-4 md:mx-9 transition-all duration-300 text-[#030503] pb-3 ${
+        className={`bg-[#f1f0f1] fixed z-50 h-[50px] w-[95%]   transition-all duration-300 text-[#030503] py-3  rounded-b-md ${
           scrolled ? "top-0" : "top-12"
         }`}
       >
@@ -56,7 +56,7 @@ export default function Nav() {
             <a
               onClick={handleClick}
               href="#home"
-              className="hover:text-[#db5c32] transition-colors duration-300 font-semibold lg:text-[14px] md:text-[12px] text-[10px]"
+              className="hover:text-[#db5c32] transition-colors duration-300 font-semibold lg:text-[14px] md:text-[10px] text-[10px]"
             >
               Nicolas Eliazer Jara
             </a>
@@ -74,13 +74,13 @@ export default function Nav() {
           </button>
 
           {/* MENÚ PRINCIPAL (desktop) */}
-          <div className="hidden md:flex bg-white rounded-lg shadow-sm lg:text-[14px] md:text-[12px]">
-            {["home", "aboutNav", "work", "contact"].map((key) => (
+          <div className="hidden md:flex bg-white rounded-lg shadow-sm lg:text-[14px] md:text-[10px]">
+            {["home", "aboutNav", "work", "tecnologies","contact"].map((key) => (
               <a
                 key={key}
                 onClick={handleClick}
                 href={`#${key}`}
-                className="px-8 py-1 duration-100 hover:bg-[#030503] hover:text-white rounded-lg transition"
+                className="lg:px-8 md:px-3 py-1 duration-100 hover:bg-[#030503] hover:text-white rounded-lg transition"
               >
                 {t(key)}
               </a>
@@ -90,19 +90,19 @@ export default function Nav() {
           {/* SELECTOR DE IDIOMA (desktop personalizado con una sola imagen) */}
           <div
             ref={wrapperRef}
-            className="hidden md:block relative lg:text-[12px] md:text-[10px] w-[130px]"
+            className="hidden md:block relative lg:text-[12px] md:text-[10px] lg:w-[130px] md:w-[90px]"
           >
             <button
               type="button"
               onClick={() => setOpenLang(!openLang)}
-              className="flex items-center w-full bg-white text-[#030503] border border-gray-300 rounded-md px-2 py-1 shadow-sm focus:outline-none hover:text-[#db5c32] transition"
+              className="flex items-center w-full bg-white text-[#030503] border border-gray-300 rounded-md lg:px-2 md:px-1 py-1 shadow-sm focus:outline-none hover:text-[#db5c32] transition"
             >
               <Image
                 src={ES}
                 width={30}
                 height={20}
                 alt="Idioma"
-                className="w-[30px] h-[23px] mr-2"
+                className="lg:w-[30px] lg:h-[23px] md:w-5 md:h-[13px] md:mr-1 lg:mr-2"
               />
               <span className="flex-1 text-left">{current.label}</span>
               <svg
@@ -144,7 +144,7 @@ export default function Nav() {
         {/* MENÚ MÓVIL */}
         {menuOpen && (
           <div className="md:hidden absolute right-0 top-full bg-white rounded-b-lg shadow-lg w-[150px] text-center text-[9px]">
-            {["home", "aboutNav", "work", "contact"].map((key) => (
+            {["home", "aboutNav", "work", "contact" , "tecnologies"].map((key) => (
               <a
                 key={key}
                 onClick={() => {

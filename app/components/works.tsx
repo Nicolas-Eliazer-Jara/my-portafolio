@@ -27,7 +27,7 @@ export default function Works() {
   if (!mounted) return null; // evita render en SSR
   return (
     <section id="work">
-      <div className="w-[95%] mx-auto bg-primario text-secundario pt-40 mb-10 pb-10">
+      <div className="w-[95%] mx-auto bg-primario text-secundario mt-10 pt-10 mb-10 pb-10 rounded-lg">
       <div className="text-center mb-12">
         <h2 className="lg:text-[25px] md:text-[22px] text-[14px] font-bold text-secundario">{t("projectsTitle")}</h2>
         <p className="lg:text-[15px] md:text-[12px] text-[9px] text-black/70 mt-2">{t("projectsSubTitle")}</p>
@@ -68,7 +68,7 @@ const features = Array.isArray(featuresRaw) ? featuresRaw : [];
           href={Enlace}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block p-2 hover:bg-[#fe612c] hover:text-white border-2 transition-colors duration-500 border-[#fe612c] active:pb-1 active:pr-2 active:bg-[#e25829]  rounded-[10px] lg:w-[150px] md:w-[110px] w-[70px] lg:text-[15px] md:text-[12px] text-[9px] text-center shadow-md shadow-[#fe612c]/70 hover:shadow-lg hover:shadow-gray-500 "
+          className="inline-block p-2 hover:bg-[#fe612c] hover:text-white border-2 transition-colors duration-500 border-[#fe612c] active:pb-1 active:pr-2 active:bg-[#e25829]  rounded-[10px] lg:w-[150px] md:w-[110px] w-[70px] lg:text-[15px] md:text-[12px] text-[9px] text-center shadow-md shadow-[#fe612c]/70 hover:shadow-md hover:shadow-gray-500 "
         >
           {t("goToApp")}
         </a>
