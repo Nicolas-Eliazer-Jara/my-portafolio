@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
 import i18n from "../i18n";
 import Image from "next/image";
-import ES from "@/public/img/options/LENGUAGEDARK.svg";
+
+
 
 export default function Nav() {
   const { t } = useTranslation();
@@ -15,6 +16,14 @@ export default function Nav() {
   const [openLang, setOpenLang] = useState(false);
   const [selectedLang, setSelectedLang] = useState(i18n.language);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const [theme , setTheme] = useState(localStorage.getItem("theme")|| "light");
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === "dark") root.classList.add("dark");
+    else root.classList.remove("dark");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   useEffect(() => {
     setMounted(true);
@@ -36,6 +45,9 @@ export default function Nav() {
   const handleClick = () => new Audio("/sound/button-1.wav").play();
   const handleChange = (value: string) => i18n.changeLanguage(value);
 
+
+  
+
   const languages = [
     { value: "es", label: "Español" },
     { value: "en", label: "English" },
@@ -46,7 +58,7 @@ export default function Nav() {
   return (
     <nav className="relative mx-auto w-[95%] z-50">
       <div
-        className={`bg-[#f1f0f1] fixed z-50 h-[50px] w-[95%]   transition-all duration-300 text-[#030503] py-3  rounded-b-md ${
+        className={`dark:bg-[#f1f0f1] bg-[#030503] fixed z-50 h-[50px] w-[95%]   transition-all duration-300 text-[#030503] py-3  rounded-b-md ${
           scrolled ? "top-0" : "top-12"
         }`}
       >
@@ -87,7 +99,10 @@ export default function Nav() {
             ))}
           </div>
 
-          {/* SELECTOR DE IDIOMA (desktop personalizado con una sola imagen) */}
+          
+
+          <div className=" flex items-center">
+            {/* SELECTOR DE IDIOMA (desktop personalizado con una sola imagen) */}
           <div
             ref={wrapperRef}
             className="hidden md:block relative lg:text-[12px] md:text-[10px] lg:w-[130px] md:w-[90px]"
@@ -98,10 +113,10 @@ export default function Nav() {
               className="flex items-center w-full bg-white text-[#030503] border border-gray-300 rounded-md lg:px-2 md:px-1 py-1 shadow-sm focus:outline-none hover:text-[#db5c32] transition"
             >
               <Image
-                src={ES}
+                src={theme === "dark" ? "/img/options/LENGUAGEDARK.svg" : "/img/options/LENGUAGELIGTH.svg"}
                 width={30}
                 height={20}
-                alt="Idioma"
+                alt={theme === "dark" ? "lenguageDark" : "lenguageLight"}
                 className="lg:w-[30px] lg:h-[23px] md:w-5 md:h-[13px] md:mr-1 lg:mr-2"
               />
               <span className="flex-1 text-left">{current.label}</span>
@@ -115,6 +130,8 @@ export default function Nav() {
                 <path d="M5.25 7.5L10 12.25L14.75 7.5H5.25Z" />
               </svg>
             </button>
+
+           
 
             {openLang && (
               <ul className="absolute left-0 top-full mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50 overflow-hidden">
@@ -138,6 +155,12 @@ export default function Nav() {
                 ))}
               </ul>
             )}
+          </div>
+          
+           {/* darkMode DARK */}
+           <button onClick={()=> setTheme(theme === "dark" ? "light" : "dark")}  className="ml-4 hover:cursor-pointer ">
+            <Image src={theme === "dark" ? "/img/options/SUN.svg" : "/img/options/MOON.svg"} alt={theme === "dark" ? "darkMode" : "ligthMode"} width={100} height={100} className="w-6 h-6  " ></Image>
+          </button>
           </div>
         </div>
 
