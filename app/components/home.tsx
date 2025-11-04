@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <section id="home">
         <div className=" font-inter relative w-[95%] mx-auto mt-9  md:h-[620px] h-[420px] z-10 overflow-hidden  ">
-          <div className="relative bg-[#f1f0f1]  rounded-t-[10px] text-[#030503] z-20 md:pl-[100px] pl-[5] md:pt-[330px] pt-[230px] backdrop-brightness-65   w-full h-full">
+          <div className="relative bg-[rgb(var(--color-fondo))] text-[rgb(var(--color-texto))] transition-all duration-300  rounded-t-[10px]  z-20 md:pl-[100px] pl-[5] md:pt-[330px] pt-[230px] backdrop-brightness-65   w-full h-full">
             <div className=" ">
               <div className="flex">
               <h1 className="lg:text-[75px] md:text-[55px] text-[25px] font-semibold font-inter pt-1">

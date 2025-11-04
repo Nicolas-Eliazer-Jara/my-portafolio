@@ -2,7 +2,6 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  darkMode: 'class', // 👈 habilita el modo oscuro controlado por clase
   content: [
     './app/**/*.{ts,tsx}',
     './pages/**/*.{ts,tsx}',

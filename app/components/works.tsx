@@ -27,7 +27,7 @@ export default function Works() {
   if (!mounted) return null; // evita render en SSR
   return (
     <section id="work">
-      <div className="w-[95%] mx-auto bg-primario text-secundario mt-10 pt-10 mb-10 pb-10 rounded-lg">
+      <div className="w-[95%] mx-auto bg-[rgb(var(--color-fondo))] text-[rgb(var(--color-texto))] mt-10 pt-10 mb-10 pb-10 rounded-lg">
       <div className="text-center mb-12">
         <h2 className="lg:text-[25px] md:text-[22px] text-[14px] font-bold text-secundario">{t("projectsTitle")}</h2>
         <p className="lg:text-[15px] md:text-[12px] text-[9px] text-black/70 mt-2">{t("projectsSubTitle")}</p>

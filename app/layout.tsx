@@ -1,9 +1,7 @@
-
 import '../styles/globals.css';
 import Nav from './components/nav';
 import Footer from './components/footer';
 import "./i18n";
-import { ThemeProvider } from 'next-themes';
 import { Merriweather_Sans, Inter } from "next/font/google";
 
 const merriweatherSans = Merriweather_Sans({ subsets: ["latin"], variable: "--font-merriweather-sans" });
@@ -17,17 +15,14 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${merriweatherSans.variable} ${inter.variable}`}
-    >
-      <body className="text-[#030503]">
-        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
-          <Nav />
-          {children}
-          <Footer />
-        </ThemeProvider>
+    <html lang="es" className={`${merriweatherSans.variable} ${inter.variable}`}>
+      <body className="transition-colors duration-300">
+        <Nav />
+        <div className="absolute top-4 right-4">
+
+        </div>
+        {children}
+        <Footer />
       </body>
     </html>
   );

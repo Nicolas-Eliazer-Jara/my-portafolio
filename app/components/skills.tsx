@@ -18,7 +18,7 @@ export default function Skills() {
   if (!mounted || !ready) return null;
 
   return (
-    <section id="tecnologies" className="w-[95%] mx-auto bg-primario text-primario py-14 rounded-lg">
+    <section id="tecnologies" className="w-[95%] mx-auto bg-[rgb(var(--color-fondo))] text-[rgb(var(--color-texto))] py-14 rounded-lg">
       {/* Header */}
       <div className="text-center mb-12">
         <h2 className="lg:text-[25px] md:text-[22px] text-[14px] font-bold text-secundario">

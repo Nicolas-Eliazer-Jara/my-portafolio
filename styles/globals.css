@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
-
 :root {
-  --color-primario: 241 240 241; 
-  --color-secundario: 3 5 3; 
-  --color-terciario: 254 97 44; 
-  --color-cuarto: 248 198 98; 
-  --color-fondo: 15 26 47; 
+  --color-fondo: 241 240 241;
+  --color-texto: 3 5 3;
 }
 
+[data-theme='dark'] {
+  --color-fondo: 19, 23, 19;
+  --color-texto: 240, 240, 241;
+}
+
+/* Scrollbar */
 @layer utilities {
   .scrollbar-custom::-webkit-scrollbar {
     width: 2px;
   }
   .scrollbar-custom::-webkit-scrollbar-track {
     background: #292e2986;
-
   }
   .scrollbar-custom::-webkit-scrollbar-thumb {
     background: #292e29;
@@ -23,48 +24,18 @@
   }
 }
 
-.bg-primario {
-  background-color: rgb(var(--color-primario) / 1);
-}
-.bg-secundario {
-  background-color: rgb(var(--color-secundario) / 1);
-}
-.bg-terciario {
-  background-color: rgb(var(--color-terciario) / 1);
-}
-.bg-cuarto {
-  background-color: rgb(var(--color-cuarto) / 1);
-}
-
-/* Clases de texto */
-.text-primario {
-  color: rgb(var(--color-primario) / 1);
-}
-.text-secundario {
-  color: rgb(var(--color-secundario) / 1);
-}
-.text-terciario {
-  color: rgb(var(--color-terciario) / 1);
-}
-.text-cuarto {
-  color: rgb(var(--color-cuarto) / 1);
-}
-.text-fondo {
-  color: rgb(var(--color-fondo) / 1);
-}
-
-
-
-
-
 body {
+  background-color: rgb(var(--color-fondo));
+  color: rgb(var(--color-texto));
+  transition: background-color 0.3s, color 0.3s;
   background-image: url('/img/fondo2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
-h1, h2, h3 , a {
+
+h1, h2, h3, a {
   font-family: var(--font-merriweather-sans);
 }
 
