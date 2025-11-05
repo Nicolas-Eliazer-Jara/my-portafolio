@@ -1,14 +1,6 @@
 @import "tailwindcss";
 
-:root {
-  --color-fondo: 241 240 241;
-  --color-texto: 3 5 3;
-}
 
-[data-theme='dark'] {
-  --color-fondo: 19, 23, 19;
-  --color-texto: 240, 240, 241;
-}
 
 /* Scrollbar */
 @layer utilities {
@@ -21,6 +13,19 @@
   .scrollbar-custom::-webkit-scrollbar-thumb {
     background: #292e29;
     border-radius: 10px;
+  }
+  .bg-fondo{
+    background-color:  rgb(var(--color-fondo));
+  }
+  .text-fondo {
+    color :rgb(var(--color-texto));
+  }
+  .bg-exception {
+    background-color: rgb(var(--exception-bg));
+  }
+
+  .text-exception {
+    color: rgb(var(--exception-text));
   }
 }
 
@@ -42,3 +47,31 @@ h1, h2, h3, a {
 p, span, li {
   font-family: var(--font-inter);
 }
+:root{
+  /* colores globales (light por defecto) */
+  --color-fondo: 241 240 241; /* claro */
+  --color-texto: 3 5 3; /* negro */
+
+  /* excepcion: bloque que querés invertir sólo en dark */
+  --exception-bg: 3 5 3; /* negro */
+  --exception-text: 241 240 241; /* blanco */
+}
+
+[data-theme="dark"]{
+  /* override global en dark */
+  --color-fondo: 46 46 46; /* oscuro */
+  --color-texto: 241 240 241; /* blanco */
+
+  /* excepcion en dark (se invierten respecto al tema) */
+  --exception-bg: 241 240 241; /* claro */
+  --exception-text: 3 5 3; /* oscuro */
+}
+
+/* uso general */
+body{
+  background-color: rgb(var(--color-fondo));
+  color: rgb(var(--color-texto));
+  transition: background-color .25s ease, color .25s ease;
+}
+
+/* (mantén tus otras reglas: background-image, tipografías, scrollbar, etc.) */

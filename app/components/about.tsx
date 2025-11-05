@@ -12,11 +12,10 @@ export default function About() {
 
   return (
     <section id="aboutNav">
-      <div className="w-[95%] mx-auto bg-white dark:bg-[#030503] text-black dark:text-white pt-14 pb-10 rounded-b-lg">
-        {/* flex-row en desktop, flex-col en móvil */}
-        <div className="flex flex-col sm:flex-row w-[90%] mx-auto">
+      <div className="w-[95%] mx-auto bg-fondo text-fondo pt-14  rounded-b-lg transition-colors duration-300">
+        <div className="flex flex-col sm:flex-row w-full mx-auto">
           {/* Imagen */}
-          <div className="relative sm:w-[50%] w-full sm:h-[520px] h-[250px] overflow-hidden rounded-t-[10px] sm:rounded-l-[15px] sm:rounded-tr-none">
+          <div className="relative sm:w-[50%] w-full sm:h-[620px] h-[250px] overflow-hidden ">
             <Image
               src="/img/a.jpg"
               alt="fondo"
@@ -26,9 +25,9 @@ export default function About() {
             />
           </div>
 
-          {/* Texto */}
-          <div className="bg-[#030503] dark:bg-[#f1f0f1] sm:w-[50%] w-full rounded-b-[10px] sm:rounded-r-[15px] sm:rounded-bl-none flex justify-center items-center p-6">
-            <p className="text-[#f1f0f1] dark:text-[#030503] w-[85%] lg:text-[15px] md:text-[12px] text-[9px] text-center sm:text-left">
+          {/* Texto - ESTA ES LA EXCEPCIÓN (usa variables de excepción) */}
+          <div className="sm:w-[50%] w-full  flex justify-center items-center p-6 bg-[rgb(var(--exception-bg))] text-[rgb(var(--exception-text))] transition-colors duration-300">
+            <p className="w-[85%] lg:text-[15px] md:text-[12px] text-[9px] text-center sm:text-left">
               {t("about")}
             </p>
           </div>

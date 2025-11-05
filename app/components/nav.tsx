@@ -6,35 +6,27 @@ import { Menu, X } from "lucide-react";
 import i18n from "../i18n";
 import Image from "next/image";
 import { useTheme } from "../hook/usetheme";
+import { useScroll } from "../hook/useScroll";
+import { useOutsideClick } from "../hook/useOutsideClick";
+import { useAudio } from "../hook/useAudio";
+import {motion} from 'framer-motion'
 
 export default function Nav() {
   const { t } = useTranslation();
   const [mounted, setMounted] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openLang, setOpenLang] = useState(false);
   const [selectedLang, setSelectedLang] = useState(i18n.language);
-  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const { theme, toggleTheme } = useTheme();
+  const scrolled = useScroll();
+  const playClick = useAudio("/sound/button-1.wav");
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    setMounted(true);
-    const onScroll = () => setScrolled(window.scrollY > 10);
-    const onClickOutside = (e: MouseEvent) => {
-      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node))
-        setOpenLang(false);
-    };
-    window.addEventListener("scroll", onScroll);
-    document.addEventListener("click", onClickOutside);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      document.removeEventListener("click", onClickOutside);
-    };
-  }, []);
-
+  useOutsideClick(wrapperRef, () => setOpenLang(false));
+  
+  useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
-  const handleClick = () => new Audio("/sound/button-1.wav").play();
   const handleChange = (value: string) => i18n.changeLanguage(value);
 
   const languages = [
@@ -43,11 +35,15 @@ export default function Nav() {
   ];
 
   const current = languages.find((l) => l.value === selectedLang)!;
-
   return (
     <nav className="relative mx-auto w-[95%] z-50">
+      <motion.div
+      className="hidden md:flex text-exception shadow-lg shadow-black/30 bg-white rounded-md lg:text-[14px] md:text-[10px]"
+      initial={{ opacity: 0, y: -15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}>
       <div
-        className={`bg-[rgb(var(--color-fondo))] text-[rgb(var(--color-texto))] fixed z-50 h-[50px] w-[95%] transition-all duration-300 py-3 rounded-b-md ${
+        className={`bg-fondo text-fondo fixed z-50 h-[50px] w-[95%] transition-all duration-300 py-3 rounded-b-md ${
           scrolled ? "top-0" : "top-12"
         }`}
       >
@@ -55,7 +51,7 @@ export default function Nav() {
           {/* LOGO */}
           <div className="flex flex-col">
             <a
-              onClick={handleClick}
+              onClick={playClick}
               href="#home"
               className="hover:text-[#db5c32] transition-colors duration-300 font-semibold lg:text-[14px] md:text-[10px] text-[10px]"
             >
@@ -75,18 +71,31 @@ export default function Nav() {
           </button>
 
           {/* MENÚ DESKTOP */}
-          <div className="hidden md:flex bg-white rounded-lg shadow-sm lg:text-[14px] md:text-[10px]">
+          <motion.div 
+          className="hidden md:flex  text-exception shadow-lg shadow-black/3   bg-white rounded-md  lg:text-[14px] md:text-[10px]"
+          >
+          
             {["home", "aboutNav", "work", "tecnologies", "contact"].map((key) => (
+              <motion.div
+              key={key}
+              whileHover={{
+                scale: 1.08,
+                boxShadow: " rgb(219, 93, 50)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 250, damping: 15 }}
+              >
               <a
                 key={key}
-                onClick={handleClick}
+                onClick={playClick}
                 href={`#${key}`}
-                className="lg:px-8 md:px-3 py-1 duration-100 hover:bg-[#030503] hover:text-white rounded-lg transition"
+                className="lg:px-8 md:px-3 py-1 duration-100 hover:shadow-lg hover:shadow-[#fe612c]/70 hover:bg-[#030503] hover:text-white rounded-lg transition "
               >
                 {t(key)}
               </a>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* IDIOMA + DARK MODE */}
           <div className="flex items-center">
@@ -130,7 +139,7 @@ export default function Nav() {
                       onClick={() => {
                         setSelectedLang(lang.value);
                         handleChange(lang.value);
-                        handleClick();
+                        playClick();
                         setOpenLang(false);
                       }}
                       className={`px-3 py-2 cursor-pointer transition-colors duration-150 ${
@@ -165,12 +174,12 @@ export default function Nav() {
 
         {/* MENÚ MÓVIL */}
         {menuOpen && (
-          <div className="md:hidden absolute right-0 top-full bg-white rounded-b-lg shadow-lg w-[150px] text-center text-[9px]">
+          <div className="md:hidden absolute right-0 top-full text-[#030503] bg-white rounded-b-lg shadow-lg w-[150px] text-center text-[9px]">
             {["home", "aboutNav", "work", "contact", "tecnologies"].map((key) => (
               <a
                 key={key}
                 onClick={() => {
-                  handleClick();
+                  playClick();
                   setMenuOpen(false);
                 }}
                 href={`#${key}`}
@@ -190,6 +199,7 @@ export default function Nav() {
           </div>
         )}
       </div>
+      </motion.div>
     </nav>
   );
 }
