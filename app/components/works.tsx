@@ -78,7 +78,7 @@ function WorkItem({
           href={Enlace}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block p-2 hover:bg-[#fe612c] hover:text-white border-2 transition-colors duration-300 border-[#fe612c] active:pb-1 active:pr-2 active:bg-[#e25829]  rounded-[10px] lg:w-[150px] md:w-[110px] w-[70px] lg:text-[15px] md:text-[12px] text-[9px] text-center shadow-lg   "
+          className="inline-block p-2 hover:bg-[#fe612c] hover:text-white border-2 transition-colors duration-300 border-[#fe612c]  active:bg-[#e25829]  rounded-[10px] lg:w-[150px] md:w-[110px] w-[70px] lg:text-[15px] md:text-[12px] text-[9px] text-center shadow-lg   "
         >
           {t("goToApp")}
         </a>
@@ -119,7 +119,7 @@ function WorkItem({
       </div>
 
       <div
-  className="sm:w-[50%] sm:pl-10 mt-5 lg:mt-0 md:mt-10 w-full h-full rounded-[10px] p-4 flex flex-col items-center justify-center"
+  className="sm:w-[50%]  mt-5 lg:mt-0 md:mt-10 w-full h-full rounded-[10px] p-4 flex flex-col items-center justify-center"
   style={{ background: Background }}
 >
   <div className="mb-5 overflow-hidden w-full  flex justify-center">
@@ -144,7 +144,7 @@ function WorkItem({
           alt={`${Id}-${idx}`}
           height={100}
           width={100}
-          className="object-contain rounded-[5px]  w-[100px]"
+          className="object-contain rounded-[5px] h-[58px]  w-[100px]"
         />
       </div>
     ))}
