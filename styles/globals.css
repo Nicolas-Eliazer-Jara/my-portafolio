@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-
+::selection{
+  background-color: #db5c32;
+  color: #2e2e2e;}
 
 /* Scrollbar */
 @layer utilities {

@@ -1,91 +1,113 @@
-# 🌐 Portafolio Web - Nicolas Jara
+🌐 Portafolio Web - Nicolas Jara
 
-Este es mi portafolio profesional como desarrollador frontend. Está diseñado para presentar mis mejores proyectos, tecnologías dominadas, y habilidades principales. 100% responsive, moderno, funcional y optimizado.
+Este es mi portafolio profesional como desarrollador frontend. Está diseñado para presentar mis mejores proyectos, tecnologías dominadas y habilidades principales.
+100% responsive, moderno, funcional y optimizado.
 
-![Deploy Status](https://img.shields.io/badge/Deploy-Vercel-black?style=flat-square&logo=vercel)
-![Tech](https://img.shields.io/badge/Next.js-14-blue?style=flat-square&logo=next.js)
-![Tailwind](https://img.shields.io/badge/TailwindCSS-3.x-blue?style=flat-square&logo=tailwindcss)
-![License](https://img.shields.io/badge/Licencia-Personal-success?style=flat-square)
 
----
 
-## ✨ Características principales
 
-- Diseño moderno, elegante y responsive
-- Navegación fluida entre secciones
-- Proyectos destacados con imágenes interactivas
-- Sistema de scroll individual por proyecto
-- Cursor personalizado
-- Animaciones y transiciones suaves
-- Estructura limpia y escalable
 
----
 
-## 📸 Vista previa
+
+
+✨ Características principales
+
+Diseño moderno, elegante y totalmente responsive
+
+Navegación fluida entre secciones
+
+Modo oscuro (Dark Mode) con guardado automático de preferencia
+
+Selector de idioma (Español / Inglés) mediante i18n.js
+
+Animaciones e interacciones suaves con Framer Motion
+
+Sonidos personalizados al interactuar con botones
+
+Cursor personalizado
+
+Navbar dinámica, con menú hamburguesa en móviles
+
+Scroll individual por proyecto
+
+Estructura limpia, modular y escalable
+
+📸 Vista previa
 
 ![Vista previa](./public/img/preview.png)
 
----
+⚙️ Tecnologías utilizadas
 
-## ⚙️ Tecnologías utilizadas
+Next.js 15 (App Router + Client Components)
 
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **TailwindCSS**
-- **React Hook Form + Zod**
-- **Zustand** (en proyectos con carrito)
-- **Optimización de imágenes con `next/image`**
-- **Custom Hooks + Tipado estricto**
+TypeScript
 
----
+TailwindCSS
 
-## 📁 Estructura del proyecto
+Framer Motion (animaciones suaves)
 
-├── app/
-│ ├── components/
-│ ├── styles/
-│ ├── pages/
-│ ├── layout.tsx
-│ ├── page.tsx
-├── public/
-│ └── img/work/
-├── data/works.ts
-├── types/
-├── hooks/
-├── README.md
+i18next + react-i18next (traducciones dinámicas)
 
----
+React Hook Form + Zod (validación de formularios)
 
-## 📱 Responsive
+Zustand (gestión de estado en proyectos con carrito)
 
-Diseño 100% responsive optimizado para:
+next/image (optimización de imágenes)
 
-- 💻 Desktop
-- 📱 Mobile
-- 📱 Tablet
+Custom Hooks + Tipado estricto
 
----
+📁 Estructura del proyecto
+├── app
+├── components
+│   ├── about.tsx
+│   ├── footer.tsx
+│   ├── home.tsx
+│   ├── nav.tsx
+│   ├── skills.tsx
+│   └── works.tsx
+├── data
+│   ├── contact.tsx
+│   ├── skillsData.tsx
+│   └── works.tsx
+├── fonts.ts
+├── hook
+│   ├── useAudio.ts
+│   ├── useOutsideClick.ts
+│   ├── useScroll.ts
+│   └── usetheme.ts
+├── i18n.js
+├── layout.tsx
+├── page.tsx
+└── types
+    └── work.d.ts
 
-## 🚀 Cómo correr el proyecto localmente
+📱 Responsive
 
-```bash
-git clone https://github.com/Nicolas-Eliazer-Jara/my-portafolio-
-cd portfolio
+Diseño 100% adaptado para:
+
+💻 Desktop
+
+📱 Mobile
+
+📱 Tablet
+
+🚀 Cómo correr el proyecto localmente
+git clone https://github.com/Nicolas-Eliazer-Jara/my-portafolio.git
+cd my-portafolio
 npm install
 npm run dev
+
+
 Luego abrí tu navegador en:
 👉 http://localhost:3000
 
----
-
 📄 Licencia
-Este proyecto es de uso personal. Si querés reutilizar alguna parte, por favor citá el repositorio o consultame antes.
 
----
+Este proyecto es de uso personal.
+Si querés reutilizar alguna parte, por favor citá el repositorio o consultame antes.
 
 ✉️ Contacto
-Si te interesa mi trabajo o querés contactarme:
 
 📧 nicolas.jara.dev@gmail.com
 
-🌐 Tu sitio desplegado en Vercel
+🌐 Sitio desplegado: https://my-portafolio.vercel.app
