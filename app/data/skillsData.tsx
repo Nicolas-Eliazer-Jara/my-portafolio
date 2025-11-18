@@ -35,6 +35,22 @@ const skillsData = [
     img: "/img/skils/logos/TS.svg",
     title: "TypeScript",
   },
+  {
+    img: "/img/skils/logos/Node.svg",
+    title: "Node.js",
+  },
+  {
+    img: "/img/skils/logos/Postgresql.svg",
+    title: "PostgreSQL",
+  },
+  {
+    img: "/img/skils/logos/Prisma.svg",
+    title: "Prisma",
+  },
+  {
+    img: "/img/skils/logos/Vitest.svg",
+    title: "Vitest",
+  },
 ];
 
 export default skillsData;

@@ -1,79 +1,103 @@
 @import "tailwindcss";
-
-::selection{
+::selection {
   background-color: #db5c32;
-  color: #2e2e2e;}
-
-/* Scrollbar */
+  color: #2e2e2e;
+} /* Scrollbar */
 @layer utilities {
+  /* LIGHT MODE */
   .scrollbar-custom::-webkit-scrollbar {
     width: 2px;
+    transition: width 0.2s ease;
   }
+
+  /* Hover → más ancho */
+  .scrollbar-custom:hover::-webkit-scrollbar {
+    width: 4px;
+  }
+
   .scrollbar-custom::-webkit-scrollbar-track {
+    background: #bbbbbb;
+  }
+
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #bbbbbb;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+  }
+
+  /* Hover → thumb negro */
+  .scrollbar-custom:hover::-webkit-scrollbar-thumb {
+    background: #000000;
+  }
+
+
+  /* ===========================
+     DARK MODE
+  =========================== */
+  .dark .scrollbar-custom::-webkit-scrollbar-track {
     background: #292e2986;
   }
-  .scrollbar-custom::-webkit-scrollbar-thumb {
+
+  .dark .scrollbar-custom::-webkit-scrollbar-thumb {
     background: #292e29;
-    border-radius: 10px;
   }
-  .bg-fondo{
-    background-color:  rgb(var(--color-fondo));
+
+  .dark .scrollbar-custom:hover::-webkit-scrollbar-thumb {
+    background: #000000;
+  }
+
+
+
+  .bg-fondo {
+    background-color: rgb(var(--color-fondo));
   }
   .text-fondo {
-    color :rgb(var(--color-texto));
+    color: rgb(var(--color-texto));
   }
   .bg-exception {
     background-color: rgb(var(--exception-bg));
   }
-
   .text-exception {
     color: rgb(var(--exception-text));
   }
 }
-
 body {
   background-color: rgb(var(--color-fondo));
   color: rgb(var(--color-texto));
   transition: background-color 0.3s, color 0.3s;
-  background-image: url('/img/fondo2.jpg');
+  background-image: url("/img/fondo2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
 }
-
-h1, h2, h3, a {
+h1,
+h2,
+h3,
+a {
   font-family: var(--font-merriweather-sans);
 }
-
-p, span, li {
+p,
+span,
+li {
   font-family: var(--font-inter);
 }
-:root{
+:root {
   /* colores globales (light por defecto) */
   --color-fondo: 241 240 241; /* claro */
-  --color-texto: 3 5 3; /* negro */
-
-  /* excepcion: bloque que querés invertir sólo en dark */
+  --color-texto: 3 5 3; /* negro */ /* excepcion: bloque que querés invertir sólo en dark */
   --exception-bg: 3 5 3; /* negro */
   --exception-text: 241 240 241; /* blanco */
 }
-
-[data-theme="dark"]{
+[data-theme="dark"] {
   /* override global en dark */
   --color-fondo: 46 46 46; /* oscuro */
-  --color-texto: 241 240 241; /* blanco */
-
-  /* excepcion en dark (se invierten respecto al tema) */
+  --color-texto: 241 240 241; /* blanco */ /* excepcion en dark (se invierten respecto al tema) */
   --exception-bg: 241 240 241; /* claro */
   --exception-text: 3 5 3; /* oscuro */
-}
-
-/* uso general */
-body{
+} /* uso general */
+body {
   background-color: rgb(var(--color-fondo));
   color: rgb(var(--color-texto));
-  transition: background-color .25s ease, color .25s ease;
-}
-
-/* (mantén tus otras reglas: background-image, tipografías, scrollbar, etc.) */
+  transition: background-color 0.25s ease, color 0.25s ease;
+} /* (mantén tus otras reglas: background-image, tipografías, scrollbar, etc.) */

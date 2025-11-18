@@ -59,7 +59,28 @@
     "TypeScript": {
       "desc": "Statically typed JavaScript for added security.",
       "descTwo": "Static typing, interfaces, custom types, development-time error prevention."
-    }
+    },
+    "Node.js": {
+"desc": "Server-side JavaScript runtime environment.",
+"descTwo": "API creation, routing, middleware, controllers, database connectivity, authentication, and backend logic."
+
+},"PostgreSQL": {
+"desc": "Powerful, stable, and open-source relational database.",
+"descTwo": "SQL queries, table creation, relationships, indexes, joins, transactions, and efficient handling of structured data."
+
+},
+"Prisma": {
+"desc": "A modern ORM for simple and typed interaction with databases.",
+
+"descTwo": "Data modeling, migrations, typed queries, relationships, validation, and backend-to-PostgreSQL connectivity."
+
+},
+
+"Vitest": {
+"desc": "A fast and modern testing framework for JavaScript and TypeScript projects.",
+"descTwo": "Unit tests, mocks, component tests, assertions, integration with the React Testing Library, and fast execution during development."
+
+}
   },
 
   "WorksData":{
