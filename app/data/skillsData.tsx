@@ -36,8 +36,8 @@ const skillsData = [
     title: "TypeScript",
   },
   {
-    img: "/img/skils/logos/Node.svg",
-    title: "Node.js",
+    img: "/img/skils/logos/Node.png",
+    title: "Node.js + Express",
   },
   {
     img: "/img/skils/logos/Postgresql.svg",

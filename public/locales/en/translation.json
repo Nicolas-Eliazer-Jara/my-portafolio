@@ -60,11 +60,14 @@
       "desc": "Statically typed JavaScript for added security.",
       "descTwo": "Static typing, interfaces, custom types, development-time error prevention."
     },
-    "Node.js": {
-"desc": "Server-side JavaScript runtime environment.",
-"descTwo": "API creation, routing, middleware, controllers, database connectivity, authentication, and backend logic."
+    "Node.js + Express": {
+  "desc": "JavaScript backend runtime and lightweight web framework.",
+  "descTwo": "REST APIs, routing, middleware, controllers, JWT auth, validation, file uploads, password hashing, and database integration."
+}
 
-},"PostgreSQL": {
+
+
+,"PostgreSQL": {
 "desc": "Powerful, stable, and open-source relational database.",
 "descTwo": "SQL queries, table creation, relationships, indexes, joins, transactions, and efficient handling of structured data."
 
