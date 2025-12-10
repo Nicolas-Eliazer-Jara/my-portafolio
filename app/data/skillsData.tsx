@@ -39,7 +39,7 @@ const skillsData = [
     img: "/img/skils/logos/Node.png",
     title: "Node.js + Express",
   },
-  {
+ /* {
     img: "/img/skils/logos/Postgresql.svg",
     title: "PostgreSQL",
   },
@@ -50,7 +50,7 @@ const skillsData = [
   {
     img: "/img/skils/logos/Vitest.svg",
     title: "Vitest",
-  },
+  },*/
 ];
 
 export default skillsData;
