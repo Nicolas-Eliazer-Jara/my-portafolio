@@ -57,7 +57,7 @@ export default function Nav() {
               >
                 Nicolas Eliazer Jara
               </a>
-              <p className="lg:text-[10px] text-[7px]">La Pampa, Argentina</p>
+              <p className="lg:text-[10px] text-[7px]">Buenos Aires, Argentina</p>
             </div>
 
             {/* MENÚ CENTRADO */}
