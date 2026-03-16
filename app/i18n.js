@@ -1,18 +1,21 @@
 "use client";
+
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import HttpBackend from "i18next-http-backend";
+
+import es from "../public/locales/es/translation.json";
+import en from "../public/locales/en/translation.json";
 
 i18n
-  .use(HttpBackend)
   .use(initReactI18next)
   .init({
     lng: "es",
     fallbackLng: "en",
     interpolation: { escapeValue: false },
-    backend: {
-      loadPath: "/locales/{{lng}}/translation.json", // 👈 desde /public/locales/
-    },
+    resources: {
+      es: { translation: es },
+      en: { translation: en }
+    }
   });
 
 export default i18n;
