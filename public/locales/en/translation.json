@@ -5,8 +5,8 @@
   "contact": "Contact",
   "tecnologies":"Tecnologies",
 
-  "title": "I'm a developer passionate about technology, always learning something new. I've been building websites for three years.",
-  "about": "Front-end developer focused on creating modern, accessible, and responsive interfaces. I work with technologies like React, TypeScript, and TailwindCSS, and I'm constantly learning to improve my skills and stay up-to-date with web development best practices. I'm passionate about transforming ideas into clear, functional visual experiences. I've worked on personal projects that reflect my commitment to clean code, organization, and usability.",
+  "title": "I build modern web applications using React, TypeScript, and Next.js, focused on performance, accessibility, and best development practices.",
+  "about": "I am a frontend developer focused on building modern, accessible, and responsive interfaces. I mainly work with React, TypeScript, Next.js, and TailwindCSS to develop scalable and well-structured web applications. In my projects, I pay special attention to clean code, component organization, and user experience. Currently, I continue improving my skills by exploring modern frontend tools and best development practices.",
 
   "projectsTitle": "My Projects",
   "projectsSubTitle": "A selection of projects that reflect my experience, dedication.",
@@ -90,21 +90,18 @@
 
 "E-commerceStore":{
 "Name": "E-commerce Store",
-"ProjectDescription":
-"E-commerce web application developed with Next.js. Allows the user to browse products, filter by category, sort by price, view individual details, and manage them within a persistent cart.",
-"TechnologyDescription":
-"Next.js with App Router is used for dynamic page routing. Zustand manages the global cart state. TailwindCSS allows utility styles and custom classes with the theme system. Connects to the FakeStoreAPI public API to retrieve products.",
-"Role":
-"Full frontend design and development, including route structure, API consumption, filtering and sorting logic, responsive interface, and interaction animations.",
-"Features": [
-"Product listing with image, price, and rating",
-"Filter by category (men, women, jewelry, technology)",
-"Sorting by price ascending/descending",
-"Cart with counter, quantity increase/decrease, and deletion by item",
-"Product detail page with complete information",
-"Visual message upon checkout",
-"100% responsive design for desktop and mobile"
-]
+  "ProjectDescription": "An e-commerce web application built with Next.js. It allows users to browse products, filter them by category, sort them by price, view detailed product information, and manage them within a persistent shopping cart.",
+  "TechnologyDescription": "Next.js with the App Router is used for page routing and navigation between views. Products are managed through local data within the project. Zustand handles the global cart state. TailwindCSS is used to build a modern, consistent, and responsive user interface.",
+  "Role": "Full frontend design and development, including route architecture with Next.js, local data modeling, shopping cart implementation with global state, product filtering and sorting logic, and responsive interface development.",
+  "Features": [
+    "Product listing with image, price, and rating",
+    "Category filtering (men, women, jewelry, electronics)",
+    "Price sorting (ascending and descending)",
+    "Shopping cart with counter, quantity updates, and item removal",
+    "Individual product detail page",
+    "Visual confirmation after completing a purchase",
+    "Fully responsive design for desktop and mobile devices"
+  ]
 },
 
 "WeatherApp":{

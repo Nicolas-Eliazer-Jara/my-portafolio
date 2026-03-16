@@ -120,7 +120,7 @@ export default function Nav() {
                       width={22}
                       height={16}
                       alt="language"
-                      className="mr-1"
+                      className="mr-1 "
                     />
                     <span>{current.label}</span>
                     <svg

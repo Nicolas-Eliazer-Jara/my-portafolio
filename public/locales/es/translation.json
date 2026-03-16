@@ -5,8 +5,8 @@
   "contact": "Contacto",
   "tecnologies":"Tecnologias",
 
-  "title": "Soy un desarrollador apasionado por la tecnología, siempre estoy aprendiendo algo nuevo. Hace tres años que hago páginas web.",
-  "about": "Frontend con enfoque en crear interfaces modernas, accesibles y responsivas. Trabajo con tecnologías como React, TypeScript y TailwindCSS, y estoy en constante aprendizaje para mejorar mis habilidades y estar al día con las mejores prácticas del desarrollo web. Me apasiona transformar ideas en experiencias visuales claras y funcionales. He trabajado en proyectos personales que reflejan mi compromiso con el código limpio, la organización y la usabilidad.",
+  "title": "Construyo aplicaciones web modernas con React, TypeScript y Next.js, enfocadas en rendimiento, accesibilidad y buenas prácticas.",
+  "about": "Soy desarrollador frontend enfocado en la creación de interfaces modernas, accesibles y responsivas. Trabajo principalmente con React, TypeScript, Next.js y TailwindCSS para desarrollar aplicaciones web escalables y bien estructuradas. En mis proyectos pongo especial atención en el código limpio, la organización de componentes y la experiencia del usuario. Actualmente continúo profundizando en herramientas del ecosistema moderno de frontend y buenas prácticas de desarrollo.",
 
   "projectsTitle": "Mis Proyectos",
   "projectsSubTitle": "Una selección de los trabajos que reflejan mi experiencia, dedicación.",
@@ -91,22 +91,19 @@
   "WorksData":{
 
     "E-commerceStore":{
-      "Name": "E-commerce Store",
-    "ProjectDescription":
-      "Aplicación web de e-commerce desarrollada con Next.js. Permite al usuario navegar productos, filtrarlos por categoría, ordenarlos por precio, ver detalles individuales y gestionarlos dentro de un carrito persistent.",
-      "TechnologyDescription":
-      "Next.js con App Router se utiliza para el ruteo de páginas dinámicas. Zustand gestiona el estado global del carrito. TailwindCSS permite estilos utilitarios y clases personalizadas con sistema de temas. Se conecta a la API pública FakeStoreAPI para obtener los productos.",
-    "Role":
-      "Diseño y desarrollo completo del frontend, incluyendo estructura de rutas, consumo de API, lógica de filtrado y ordenamiento, interfaz responsive, y animaciones de interacción.",
-   "Features": [
-      "Listado de productos con imagen, precio y puntuación",
-      "Filtro por categoría (men, women, joyería, tecnología)",
-      "Ordenamiento por precio ascendente/descendente",
-      "Carrito con contador, aumento/disminución de cantidad y borrado por ítem",
-      "Página de detalle del producto con información completa",
-      "Mensaje visual al completar una compra",
-      "Diseño 100% responsive para desktop y mobile"
-    ]
+     "Name": "E-commerce Store",
+  "ProjectDescription": "Aplicación web de e-commerce desarrollada con Next.js. Permite explorar productos, filtrarlos por categoría, ordenarlos por precio, visualizar el detalle de cada producto y gestionarlos dentro de un carrito persistente.",
+  "TechnologyDescription": "Next.js con App Router se utiliza para el ruteo de páginas y navegación entre vistas. Los productos se gestionan mediante datos locales dentro del proyecto. Zustand se utiliza para administrar el estado global del carrito. TailwindCSS se emplea para construir una interfaz moderna, consistente y responsive.",
+  "Role": "Diseño y desarrollo completo del frontend, incluyendo la arquitectura de rutas con Next.js, modelado de datos locales, implementación del carrito con estado global, lógica de filtrado y ordenamiento de productos, y desarrollo de una interfaz responsive.",
+  "Features": [
+    "Listado de productos con imagen, precio y puntuación",
+    "Filtro por categoría (men, women, jewelry, electronics)",
+    "Ordenamiento por precio ascendente y descendente",
+    "Carrito con contador, modificación de cantidades y eliminación de productos",
+    "Página de detalle del producto con información completa",
+    "Confirmación visual al finalizar una compra",
+    "Diseño completamente responsive para desktop y dispositivos móviles"
+  ]
     },
     
     "WeatherApp":{

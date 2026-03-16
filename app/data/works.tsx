@@ -5,7 +5,7 @@ const WorksData = [
     Img1: "/img/work/work-ecommerce/work-ecommerce1.png",
     Img2: "/img/work/work-ecommerce/work-ecommerce2.png",
     Img3: "/img/work/work-ecommerce/work-ecommerce3.png",
-    Tecnologias: "Next.js, TypeScript, TailwindCSS, Zustand, FakeStoreAPI",
+    Tecnologias: "Next.js, TypeScript, TailwindCSS, Zustand",
     Enlace: "https://e-commerce-one-phi-41.vercel.app/",
     Background: "linear-gradient(90deg,rgba(255, 209, 209, 1) 0%, rgba(35, 35, 87, 1) 100%)"
   },
