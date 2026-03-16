@@ -110,4 +110,4 @@ Si querés reutilizar alguna parte, por favor citá el repositorio o consultame 
 
 📧 nicolas.jara.dev@gmail.com
 
-🌐 Sitio desplegado: https://my-portafolio.vercel.app
+🌐 Sitio desplegado: https://nicolas-portafolio.vercel.app/
